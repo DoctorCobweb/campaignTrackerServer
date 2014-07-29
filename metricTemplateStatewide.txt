@@ -1,0 +1,231 @@
+[
+  {"name":"Total attempts",
+  "info":"This is the total number of doors knocked on.",
+  "goal":"10000.0",
+  "activity":"Door Knocking",
+  "context":"Statewide"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of doors actually answered.",
+  "goal":"9000.0",
+  "activity":"Door Knocking",
+  "context":"Statewide"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from doors answered.",
+  "goal":"8000.0",
+  "activity":"Door Knocking",
+  "context":"Statewide"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent door knocking. If 5 people knocked for 10hrs then this would mean 50hrs total spent.",
+  "goal":"50000.0",
+  "activity":"Door Knocking",
+  "context":"Statewide"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hourse spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"80000.0",
+  "activity":"Door Knocking",
+  "context":"Statewide"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with door knocking for the entire campaign.",
+  "goal":"12000.0",
+  "activity":"Door Knocking",
+  "context":"Statewide"},
+  
+  
+  
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"90000.0",
+  "activity":"Phone Banking",
+  "context":"Statewide"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"7000.0",
+  "activity":"Phone Banking",
+  "context":"Statewide"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"6000.0",
+  "activity":"Phone Banking",
+  "context":"Statewide"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"10000.0",
+  "activity":"Phone Banking",
+  "context":"Statewide"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"70000.0",
+  "activity":"Phone Banking",
+  "context":"Statewide"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the entire campaign.",
+  "goal":"11000.0",
+  "activity":"Phone Banking",
+  "context":"Statewide"},
+  
+  
+  
+  
+   {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"90050.0",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Statewide"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"7050.0",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Statewide"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"6050.0",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Statewide"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"10050.0",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Statewide"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"70050.0",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Statewide"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the campaign. Non unique, meaning a person who has previously done phone calling is counted again if they do phone calling again.",
+  "goal":"11050.0",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Statewide"},
+  
+    {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have been rung up during recruitment phone calling",
+  "goal":"11050.0",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Statewide"},
+  
+  
+  
+     {"name":"Total attempts",
+  "info":"This is the total number of one on ones attempted.",
+  "goal":"90055.0",
+  "activity":"One On One",
+  "context":"Statewide"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"This is the total number of meaningful interactions had from one on ones.",
+  "goal":"7055.0",
+  "activity":"One On One",
+  "context":"Statewide"},
+  
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people at the neighbourhood team meeting.",
+  "goal":"90005.0",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Statewide"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number neighbourhood team meetings to be had.",
+  "goal":"705.0",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Statewide"},
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people who attended the gathering.",
+  "goal":"80005.0",
+  "activity":"Volunteer House Gathering",
+  "context":"Statewide"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number volunteer house gatherings to be had.",
+  "goal":"405.0",
+  "activity":"Volunteer House Gathering",
+  "context":"Statewide"},
+  
+  {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have attended the house gathering.",
+  "goal":"90050.0",
+  "activity":"Volunteer House Gathering",
+  "context":"Statewide"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number stalls to have.",
+  "goal":"500.0",
+  "activity":"Stall",
+  "context":"Statewide"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers attending the stall for the campaign. Non unique, meaning a person who has previously been to a stall is counted again if they attend another stall event.",
+  "goal":"11000.0",
+  "activity":"Stall",
+  "context":"Statewide"},
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of conversations had whilst at the stall.",
+  "goal":"1000.0",
+  "activity":"Stall",
+  "context":"Statewide"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from the stall.",
+  "goal":"300.0",
+  "activity":"Stall",
+  "context":"Statewide"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number voter house meetings to have.",
+  "goal":"60.0",
+  "activity":"Voter House Meeting",
+  "context":"Statewide"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending voter house meetings for the entire campaign. Non unique, meaning a person who has previously been to a voter house meeting is counted again if they attend another.",
+  "goal":"100.0",
+  "activity":"Voter House Meeting",
+  "context":"Statewide"},
+
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number training sessions to have.",
+  "goal":"120.0",
+  "activity":"Training Session",
+  "context":"Statewide"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending training sessions for the campaign. Non unique, meaning a person who has previously been to a training session is counted again if they attend another.",
+  "goal":"300.0",
+  "activity":"Training Session",
+  "context":"Statewide"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"70050.0",
+  "activity":"Training Session",
+  "context":"Statewide"}
+]

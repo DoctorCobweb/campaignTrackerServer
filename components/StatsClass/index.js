@@ -12,10 +12,10 @@ var StatsClass = function (surveys, context, metrics) {
     "Total attempts":"attempts",
     "Total answered":"answered",
     "Total meaningful interactions":"meaningfulInteractions",
-    "Total hours spent":"volTotalWorkHrs",
-    "Total volunteer training hrs":"volTotalTrainingHrs",
-    "Total volunteer participation":"attendance",
-    "Total volunteer hrs committed":"volTotalHrsCommitted",
+    "Total volunteer hours spent":"volTotalWorkHrs",
+    "Total volunteer training hours":"volTotalTrainingHrs",
+    "Total attendance":"attendance",
+    "Total volunteer hours committed":"volTotalHrsCommitted",
     "Total number of events":"activityCount"
   };
   this.translator = {

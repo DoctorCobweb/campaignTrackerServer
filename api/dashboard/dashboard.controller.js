@@ -32,7 +32,23 @@ exports.statewide = function(req, res) {
 };
 
 
+// Get dashboard upperHouse summary
+exports.regionSummary = function(req, res) {
+  Survey.find({region: req.params.region}, function (err, surveys) {
+    if(err) { return handleError(res, err); }
+    console.log('region: ' + req.params.region);
 
+    upperHouseUtils.upperHouseSummaryFilter(
+      surveys,
+      req.params.region,
+      function(error, results) {
+        if(error) { return handleError(res, err); }
+        return res.json(200, results);
+      });
+  });
+};
+
+/*
 // Get dashboard upperHouse 
 exports.regionSummary = function(req, res) {
   console.log('region: ' + req.params.region);
@@ -43,6 +59,7 @@ exports.regionSummary = function(req, res) {
     return res.json(200, upperHouseUtils.upperHouseFilter(surveys));
   });
 };
+*/
 
 // Get dashboard lowerHouse 
 exports.districtSummary = function(req, res) {
