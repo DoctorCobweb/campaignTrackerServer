@@ -23,10 +23,13 @@ exports.index = function(req, res) {
 exports.statewide = function(req, res) {
   Survey.find(function (err, surveys) {
     if(err) { return handleError(res, err); }
-    return res.json(200, overviewUtils.overviewFilter(surveys));
+
+    overviewUtils.overviewFilter(surveys, 'Statewide', function (error, results){
+      if(error) { return handleError(res, err); }
+      return res.json(200, results);
+    });
   });
 };
-
 
 
 

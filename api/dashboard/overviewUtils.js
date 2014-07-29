@@ -2,6 +2,10 @@
 
 var _ = require('lodash');
 var ActivityClass = require('../../components/ActivityClass');
+var Metric = require('../metric/metric.model');
+var Context= require('../context/context.model');
+var StatsClass= require('../../components/StatsClass');
+
 
 var dkMetrics = [
   {"name": "Total attempts", "goal": 5000.0, "attr":"attempts"},
@@ -56,10 +60,65 @@ var tsMetrics = [
   {"name": "Total attendance", "goal": 2000.0, "attr":"attendance"},
   {"name": "Total volunteer training hrs", "goal": 2000.0, "attr":"volTotalTrainingHrs"}];
 
-exports.overviewFilter = function (surveys) {
+exports.overviewFilter = function (surveys, context, cb) {
+    /*
+    var metric_seed = new Metric({
+      name: "Total number of events",
+      info: "How may events have been help in total",
+      goal: 5000.0,
+      activity: "Training Session",
+      context: "Statewide"
+    });
+
+    metric_seed.save(function (err) {
+      if (err) return handleError(err);
+
+      Context.findOne({name: context}, function (err, context){
+        if (err) return handleError(err);
+        console.log(context);
+        context.metrics.push(metric_seed._id);
+
+        context.save(function (err){
+          if (err) return handleError(err);
+        });
+      });
+      
+      //var context = new Context({
+      //  name: "Statewide",
+      //  info: "Coarsest statistic available for the state.",
+      //  population: 3500000,
+      //  metrics: [metric_seed._id]
+      //});
+      //
+      //context.save(function (err) {
+      //  if (err) return handleError(err);
+      //  // thats it!
+      //});
+
+    });
+    */
+
+
+    Context 
+      .find({ name: context })
+      .populate('metrics')
+      .exec(function (err, context) {
+        if (err) return cb(err);
+        //console.log('The metrics in context are: ');
+        //console.dir(context[0].metrics);
+        
+        var stats = new StatsClass(surveys, context, context[0].metrics);
+        var summaryStats = stats.getSummaryStats();
+
+        cb(null, summaryStats);
+      });
+
+
+    /*
     var dkStats   = new ActivityClass('Door Knocking', surveys, dkMetrics);
     var pbStats   = new ActivityClass('Phone Banking', surveys, pbMetrics);
-    var vrpcStats = new ActivityClass('Volunteer Recruitment Phone Calling', surveys, vrpcMetrics);
+    var vrpcStats = new ActivityClass('Volunteer Recruitment Phone Calling',
+                                       surveys, vrpcMetrics);
     var oooStats  = new ActivityClass('One On One', surveys, oooMetrics);
     var ntmStats  = new ActivityClass('Neighbourhood Team Meeting', surveys, ntmMetrics);
     var vhgStats  = new ActivityClass('Volunteer House Gathering', surveys, vhgMetrics);
@@ -77,7 +136,8 @@ exports.overviewFilter = function (surveys) {
       "ss"  : sStats.getOverviewStats(),
       "vhms": vhmStats.getOverviewStats(),
       "tss" : tsStats.getOverviewStats()};
+    */
 
-    return mData;
+    //return mData;
 };
 
