@@ -25,7 +25,7 @@ exports.statewide = function(req, res) {
     if(err) { return handleError(res, err); }
 
     overviewUtils.overviewFilter(surveys, 'Statewide', function (error, results){
-      if(error) { return handleError(res, err); }
+      if(error) { return handleError(res, error); }
       return res.json(200, results);
     });
   });
@@ -37,12 +37,17 @@ exports.regionSummary = function(req, res) {
   Survey.find({region: req.params.region}, function (err, surveys) {
     if(err) { return handleError(res, err); }
     console.log('region: ' + req.params.region);
+    console.log('surveys:');
+    console.dir(surveys);
+
+    //must check if surveys are null for a region
+    if (!surveys) {return handleError(res, err);}
 
     upperHouseUtils.upperHouseSummaryFilter(
       surveys,
       req.params.region,
       function(error, results) {
-        if(error) { return handleError(res, err); }
+        if(error) { return handleError(res, error); }
         return res.json(200, results);
       });
   });
@@ -133,5 +138,6 @@ exports.destroy = function(req, res) {
 };
 
 function handleError(res, err) {
+  console.dir(err);
   return res.send(500, err);
 }

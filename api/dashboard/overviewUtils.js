@@ -7,70 +7,71 @@ var StatsClass= require('../../components/StatsClass');
 
 
 exports.overviewFilter = function (surveys, sentContext, cb) {
-  //the first two function calls are used to bootstrap a context and attach metrics
-  //to that new context doc
-  //seedNewContext(sentContext);  
-  //attachAllMetricsToContext(surveys, sentContext, cb);
-  startTheStatJourney(surveys, sentContext, cb);
-};
+
+  attachAllMetricsToContext();
 
 
-var attachAllMetricsToContext = function (surveys, sentContext, cb) {
-  Metric.find({context: sentContext}, function (err, metrics) {
-    if (err) return handleError(err);
-    console.log('have all the metrics for sentContext:' + sentContext);
-    //console.log(metrics.length);
-
-    Context.findOne({name: sentContext}, function (err, context){
+  function attachAllMetricsToContext () {
+    Metric.find({context: sentContext}, function (err, metrics) {
       if (err) return handleError(err);
-
-      _.forEach(metrics, function (metric) {
-        context.metrics.push(metric._id); 
-      });
-      //context.metrics.push(metric_seed._id);
-
-      context.save(function (err){
-        if (err) return handleError(err);
-        startTheStatJourney(surveys, sentContext, cb);
-      });
-    });
-  });
-};
-
-
-
-var startTheStatJourney = function (surveys, sentContext, cb) {
-  Context 
-    .find({ name: sentContext })
-    .populate('metrics')
-    .exec(function (err, context) {
-      if (err) return cb(err);
-      //console.log('The metrics in context are: ');
-      //console.dir(context[0].metrics);
-      
-      var stats = new StatsClass(surveys, context, context[0].metrics);
-      var summaryStats = stats.getSummaryStats();
-
-      cb(null, summaryStats);
-    });
-};
-
-
-var seedNewContext = function (sentContext) {
-  var context = new Context({
-    name: sentContext,
-    info: "Coarsest statistic available for the state.",
-    population: 3500000,
-    metrics: []
-  });
+      console.log('have all the metrics for sentContext:' + sentContext);
+      //console.log(metrics.length);
   
-  context.save(function (err) {
-    if (err) return handleError(err);
-    // thats it!
-  });
-};
+      //if there are no metrics for the context, return
+      if (!_.size(metrics)) {return cb({'ERR': 'no metrics present for context'}, null);};
+  
+      Context.findOne({name: sentContext}, function (err, context){
+        if (err) return handleError(err);
+        if (!context) return handleError({'ERROR':'context is null'});
+  
+  
+        //HACK: if there are metrics already associated with the context, do not add
+        //production version will have a ui for adding/removing metrics for a context
+        if (_.size(context.metrics)) {
+  
+          context.save(function (err){
+            if (err) return handleError(err);
+            startTheStatJourney();
+          });
+  
+        } else {
+  
+          _.forEach(metrics, function (metric) {
+            context.metrics.push(metric._id); 
+          });
+    
+          context.save(function (err){
+            if (err) return handleError(err);
+            startTheStatJourney();
+          });
+        }
+  
+      });
+    });
+  };
+  
+  
+  
+  function startTheStatJourney () {
+    Context 
+      .find({ name: sentContext })
+      .populate('metrics')
+      .exec(function (err, context) {
+        if (err) return cb(err);
+        //console.log('The metrics in context are: ');
+        //console.dir(context[0].metrics);
+        
+        var stats = new StatsClass(surveys, context, context[0].metrics);
+        var summaryStats = stats.getSummaryStats();
+  
+        cb(null, summaryStats);
+      });
+  };
+
+}; //end overviewFilter
+
 
 
 var handleError = function (err) {
-  console.log('ERROR: could not get metrics for context');
+  console.dir(err);
 };
