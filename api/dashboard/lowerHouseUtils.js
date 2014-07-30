@@ -1,83 +1,80 @@
 'use strict';
 
 var _ = require('lodash');
-var ActivityClass = require('../../components/ActivityClass');
+var Metric = require('../metric/metric.model');
+var Context= require('../context/context.model');
+var StatsClass= require('../../components/StatsClass');
 
-var dkMetrics = [
-  {"name": "Total attempts", "goal": 5000.0, "attr":"attempts"},
-  {"name": "Total answered", "goal": 2000.0, "attr":"answered"},
-  {"name": "Total meaningful interactions", "goal": 1000.0, "attr":"meaningfulInteractions"},
-  {"name": "Total hours spent", "goal": 2000.0, "attr":"volTotalWorkHrs"},
-  {"name": "Total volunteer training hrs", "goal": 2000.0, "attr":"volTotalTrainingHrs"},
-  {"name": "Total volunteer participation", "goal": 5000.0, "attr":"attendance"}];
 
-var pbMetrics = [
-  {"name": "Total attempts", "goal": 4000.0, "attr":"attempts"},
-  {"name": "Total answered", "goal": 3000.0, "attr":"answered"},
-  {"name": "Total meaningful interactions", "goal": 2000.0, "attr":"meaningfulInteractions"},
-  {"name": "Total hours spent", "goal": 1000.0, "attr":"volTotalWorkHrs"},
-  {"name": "Total volunteer training hrs", "goal": 500.0, "attr":"volTotalTrainingHrs"},
-  {"name": "Total volunteer participation", "goal": 5000.0, "attr":"attendance"}];
+exports.lowerHouseSummaryFilter = function (surveys, sentContext, cb) {
 
-var vrpcMetrics = [
-  {"name": "Total attempts", "goal": 2000.0, "attr":"attempts"},
-  {"name": "Total answered", "goal": 1000.0, "attr":"answered"},
-  {"name": "Total meaningful interactions", "goal": 4000.0, "attr":"meaningfulInteractions"},
-  {"name": "Total volunteer hrs committed", "goal": 7000.0, "attr":"volTotalHrsCommitted"},
-  {"name": "Total volunteer work hrs", "goal": 5000.0, "attr":"volTotalWorkHrs"},
-  {"name": "Total volunteer training hrs", "goal": 5000.0, "attr":"volTotalTrainingHrs"},
-  {"name": "Total attendance", "goal": 5000.0, "attr":"attendance"}];
+  attachAllMetricsToContext();
 
-var oooMetrics = [
-  {"name": "Total attempts", "goal": 5000.0, "attr":"attempts"},
-  {"name": "Total meaningful interactions", "goal": 1000.0, "attr":"meaningfulInteractions"}];
 
-var ntmMetrics = [
-  {"name": "Total number of meetings", "goal": 5000.0, "attr":"activityCount"},
-  {"name": "Total attendance", "goal": 2000.0, "attr":"attendance"}];
+  function attachAllMetricsToContext() {
+    Metric.find({context: sentContext}, function (err, metrics) {
+      if (err) return handleError(err);
+      console.log('have all the metrics for sentContext:' + sentContext);
+      console.log(metrics.length);
+  
+      //if there are no metrics for the context, return
+      if (!_.size(metrics)) {return cb({'ERR': 'no metrics present for context'}, null);};
+  
+      Context.findOne({name: sentContext}, function (err, context){
+        if (err) return handleError(err);
+        if (!context) return handleError({'ERROR':'context is null'});
+  
+        //HACK: if there are metrics already associated with the context, do not add
+        //production version will have a ui for adding/removing metrics for a context
+        if (_.size(context.metrics)) {
+  
+          context.save(function (err){
+            if (err) return handleError(err);
+            startTheStatJourney();
+          });
+  
+        } else {
+          //if there are no metrics in context's metrics array then push onto
+          //it the found metrics
+          _.forEach(metrics, function (metric) {
+            context.metrics.push(metric._id);
+          });
+  
+          context.save(function (err){
+            if (err) return handleError(err);
+            startTheStatJourney();
+          });
+        }
+  
+      });
+    });
+  };
+  
+  
+  
+  function startTheStatJourney () {
+    Context 
+      .find({ name: sentContext })
+      .populate('metrics')
+      .exec(function (err, context) {
+        if (err) return cb(err);
+        //console.log('The metrics in context are: ');
+        //console.dir(context[0].metrics);
+        console.log('context:');
+        console.dir(context);
+  
+        //check to see if context does not exist. e.g. nothing for 'Geelong'
+        if (!_.size(context)) {return cb({'error':'context not set this distrct'},null);}
+        
+        var stats = new StatsClass(surveys, context, context[0].metrics);
+        var summaryStats = stats.getSummaryStats();
+  
+        cb(null, summaryStats);
+      });
+  };
+}; //end lowerHouseSummaryFilter function
 
-var vhgMetrics = [
-  {"name": "Total number of gatherings", "goal": 5000.0, "attr":"activityCount"},
-  {"name": "Total volunteer hrs committed", "goal": 7000.0, "attr":"volTotalHrsCommitted"},
-  {"name": "Total attendance", "goal": 2000.0, "attr":"attendance"}];
 
-var sMetrics = [
-  {"name": "Total number of stalls", "goal": 5000.0, "attr":"activityCount"},
-  {"name": "Total attendance", "goal": 2000.0, "attr":"attendance"},
-  {"name": "Total conversations", "goal": 5000.0, "attr":"attempts"},
-  {"name": "Total meaningful interactions", "goal": 1000.0, "attr":"meaningfulInteractions"}];
-
-var vhmMetrics = [
-  {"name": "Total number of meetings", "goal": 5000.0, "attr":"activityCount"},
-  {"name": "Total attendance", "goal": 2000.0, "attr":"attendance"}];
-
-var tsMetrics = [
-  {"name": "Total number of training sessions", "goal": 5000.0, "attr":"activityCount"},
-  {"name": "Total attendance", "goal": 2000.0, "attr":"attendance"},
-  {"name": "Total volunteer training hrs", "goal": 2000.0, "attr":"volTotalTrainingHrs"}];
-
-exports.lowerHouseFilter = function (surveys) {
-    var dkStats   = new ActivityClass('Door Knocking', surveys, dkMetrics);
-    var pbStats   = new ActivityClass('Phone Banking', surveys, pbMetrics);
-    var vrpcStats = new ActivityClass('Volunteer Recruitment Phone Calling', surveys, vrpcMetrics);
-    var oooStats  = new ActivityClass('One On One', surveys, oooMetrics);
-    var ntmStats  = new ActivityClass('Neighbourhood Team Meeting', surveys, ntmMetrics);
-    var vhgStats  = new ActivityClass('Volunteer House Gathering', surveys, vhgMetrics);
-    var sStats    = new ActivityClass('Stall', surveys, sMetrics);
-    var vhmStats  = new ActivityClass('Voter House Meeting', surveys, vhmMetrics);
-    var tsStats   = new ActivityClass('Training Session', surveys, tsMetrics);
-
-    var mData = {
-      "dk"  : dkStats.getOverviewStats(),
-      "pb"  : pbStats.getOverviewStats(),
-      "vrpc": vrpcStats.getOverviewStats(),
-      "ooos": oooStats.getOverviewStats(),
-      "ntms": ntmStats.getOverviewStats(),
-      "vhgs": vhgStats.getOverviewStats(),
-      "ss"  : sStats.getOverviewStats(),
-      "vhms": vhmStats.getOverviewStats(),
-      "tss" : tsStats.getOverviewStats()};
-
-    return mData;
+var handleError = function (err) {
+  console.log(err);
 };
-

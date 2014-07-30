@@ -15,7 +15,7 @@ exports.upperHouseSummaryFilter = function (surveys, sentContext, cb) {
     Metric.find({context: sentContext}, function (err, metrics) {
       if (err) return handleError(err);
       console.log('have all the metrics for sentContext:' + sentContext);
-      //console.log(metrics.length);
+      console.log(metrics.length);
   
       //if there are no metrics for the context, return
       if (!_.size(metrics)) {return cb({'ERR': 'no metrics present for context'}, null);};
@@ -60,14 +60,16 @@ exports.upperHouseSummaryFilter = function (surveys, sentContext, cb) {
         if (err) return cb(err);
         //console.log('The metrics in context are: ');
         //console.dir(context[0].metrics);
-        //console.log('context:');
-        //console.dir(context);
+        console.log('context:');
+        console.dir(context);
   
         //check to see if context does not exist. e.g. nothing for 'Northern Victoria'
-        if (!_.size(context)) {return cb({'error':'context not set this region'});}
+        if (!_.size(context)) {return cb({'error':'context not set this region'},null);}
         
         var stats = new StatsClass(surveys, context, context[0].metrics);
         var summaryStats = stats.getSummaryStats();
+        console.dir('summaryStats');
+        console.dir(summaryStats);
   
         cb(null, summaryStats);
       });

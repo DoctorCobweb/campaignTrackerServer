@@ -1,0 +1,1843 @@
+[
+
+  {"name":"Total attempts",
+  "info":"This is the total number of doors knocked on.",
+  "goal":"451526",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of doors actually answered.",
+  "goal":"451526",
+  "activity":"Door Knocking",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from doors answered.",
+  "goal":"451526",
+  "activity":"Door Knocking",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent door knocking. If 5 people knocked for 10hrs then this would mean 50hrs total spent.",
+  "goal":"451526",
+  "activity":"Door Knocking",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hourse spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"451526",
+  "activity":"Door Knocking",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with door knocking for the entire campaign.",
+  "goal":"451526",
+  "activity":"Door Knocking",
+  "context":"Eastern Metropolitan"},
+  
+  
+  
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"451526",
+  "activity":"Phone Banking",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"451526",
+  "activity":"Phone Banking",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"451526",
+  "activity":"Phone Banking",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"451526",
+  "activity":"Phone Banking",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"451526",
+  "activity":"Phone Banking",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the entire campaign.",
+  "goal":"451526",
+  "activity":"Phone Banking",
+  "context":"Eastern Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"451526",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"451526",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"451526",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"451526",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"451526",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the campaign. Non unique, meaning a person who has previously done phone calling is counted again if they do phone calling again.",
+  "goal":"451526",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Metropolitan"},
+  
+    {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have been rung up during recruitment phone calling",
+  "goal":"451526",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Metropolitan"},
+  
+  
+  
+     {"name":"Total attempts",
+  "info":"This is the total number of one on ones attempted.",
+  "goal":"451526",
+  "activity":"One On One",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"This is the total number of meaningful interactions had from one on ones.",
+  "goal":"451526",
+  "activity":"One On One",
+  "context":"Eastern Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people at the neighbourhood team meeting.",
+  "goal":"451526",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number neighbourhood team meetings to be had.",
+  "goal":"451526",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Eastern Metropolitan"},
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people who attended the gathering.",
+  "goal":"451526",
+  "activity":"Volunteer House Gathering",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number volunteer house gatherings to be had.",
+  "goal":"451526",
+  "activity":"Volunteer House Gathering",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have attended the house gathering.",
+  "goal":"451526",
+  "activity":"Volunteer House Gathering",
+  "context":"Eastern Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number stalls to have.",
+  "goal":"451526",
+  "activity":"Stall",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers attending the stall for the campaign. Non unique, meaning a person who has previously been to a stall is counted again if they attend another stall event.",
+  "goal":"451526",
+  "activity":"Stall",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of conversations had whilst at the stall.",
+  "goal":"451526",
+  "activity":"Stall",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from the stall.",
+  "goal":"451526",
+  "activity":"Stall",
+  "context":"Eastern Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number voter house meetings to have.",
+  "goal":"451526",
+  "activity":"Voter House Meeting",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending voter house meetings for the entire campaign. Non unique, meaning a person who has previously been to a voter house meeting is counted again if they attend another.",
+  "goal":"451526",
+  "activity":"Voter House Meeting",
+  "context":"Eastern Metropolitan"},
+
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number training sessions to have.",
+  "goal":"451526",
+  "activity":"Training Session",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending training sessions for the campaign. Non unique, meaning a person who has previously been to a training session is counted again if they attend another.",
+  "goal":"451526",
+  "activity":"Training Session",
+  "context":"Eastern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"451526",
+  "activity":"Training Session",
+  "context":"Eastern Metropolitan"},
+
+
+  {"name":"Total attempts",
+  "info":"This is the total number of doors knocked on.",
+  "goal":"441066",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of doors actually answered.",
+  "goal":"441066",
+  "activity":"Door Knocking",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from doors answered.",
+  "goal":"441066",
+  "activity":"Door Knocking",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent door knocking. If 5 people knocked for 10hrs then this would mean 50hrs total spent.",
+  "goal":"441066",
+  "activity":"Door Knocking",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hourse spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"441066",
+  "activity":"Door Knocking",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with door knocking for the entire campaign.",
+  "goal":"441066",
+  "activity":"Door Knocking",
+  "context":"Eastern Victoria"},
+  
+  
+  
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"441066",
+  "activity":"Phone Banking",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"441066",
+  "activity":"Phone Banking",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"441066",
+  "activity":"Phone Banking",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"441066",
+  "activity":"Phone Banking",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"441066",
+  "activity":"Phone Banking",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the entire campaign.",
+  "goal":"441066",
+  "activity":"Phone Banking",
+  "context":"Eastern Victoria"},
+  
+  
+  
+  
+   {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"441066",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"441066",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"441066",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"441066",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"441066",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the campaign. Non unique, meaning a person who has previously done phone calling is counted again if they do phone calling again.",
+  "goal":"441066",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Victoria"},
+  
+    {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have been rung up during recruitment phone calling",
+  "goal":"441066",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Eastern Victoria"},
+  
+  
+  
+     {"name":"Total attempts",
+  "info":"This is the total number of one on ones attempted.",
+  "goal":"441066",
+  "activity":"One On One",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"This is the total number of meaningful interactions had from one on ones.",
+  "goal":"441066",
+  "activity":"One On One",
+  "context":"Eastern Victoria"},
+  
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people at the neighbourhood team meeting.",
+  "goal":"441066",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number neighbourhood team meetings to be had.",
+  "goal":"441066",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Eastern Victoria"},
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people who attended the gathering.",
+  "goal":"441066",
+  "activity":"Volunteer House Gathering",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number volunteer house gatherings to be had.",
+  "goal":"441066",
+  "activity":"Volunteer House Gathering",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have attended the house gathering.",
+  "goal":"441066",
+  "activity":"Volunteer House Gathering",
+  "context":"Eastern Victoria"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number stalls to have.",
+  "goal":"441066",
+  "activity":"Stall",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers attending the stall for the campaign. Non unique, meaning a person who has previously been to a stall is counted again if they attend another stall event.",
+  "goal":"441066",
+  "activity":"Stall",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of conversations had whilst at the stall.",
+  "goal":"441066",
+  "activity":"Stall",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from the stall.",
+  "goal":"441066",
+  "activity":"Stall",
+  "context":"Eastern Victoria"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number voter house meetings to have.",
+  "goal":"441066",
+  "activity":"Voter House Meeting",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending voter house meetings for the entire campaign. Non unique, meaning a person who has previously been to a voter house meeting is counted again if they attend another.",
+  "goal":"441066",
+  "activity":"Voter House Meeting",
+  "context":"Eastern Victoria"},
+
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number training sessions to have.",
+  "goal":"441066",
+  "activity":"Training Session",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending training sessions for the campaign. Non unique, meaning a person who has previously been to a training session is counted again if they attend another.",
+  "goal":"441066",
+  "activity":"Training Session",
+  "context":"Eastern Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"441066",
+  "activity":"Training Session",
+  "context":"Eastern Victoria"},
+
+
+  {"name":"Total attempts",
+  "info":"This is the total number of doors knocked on.",
+  "goal":"440453",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of doors actually answered.",
+  "goal":"440453",
+  "activity":"Door Knocking",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from doors answered.",
+  "goal":"440453",
+  "activity":"Door Knocking",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent door knocking. If 5 people knocked for 10hrs then this would mean 50hrs total spent.",
+  "goal":"440453",
+  "activity":"Door Knocking",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hourse spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"440453",
+  "activity":"Door Knocking",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with door knocking for the entire campaign.",
+  "goal":"440453",
+  "activity":"Door Knocking",
+  "context":"Northern Metropolitan"},
+  
+  
+  
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"440453",
+  "activity":"Phone Banking",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"440453",
+  "activity":"Phone Banking",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"440453",
+  "activity":"Phone Banking",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"440453",
+  "activity":"Phone Banking",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"440453",
+  "activity":"Phone Banking",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the entire campaign.",
+  "goal":"440453",
+  "activity":"Phone Banking",
+  "context":"Northern Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"440453",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"440453",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"440453",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"440453",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"440453",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the campaign. Non unique, meaning a person who has previously done phone calling is counted again if they do phone calling again.",
+  "goal":"440453",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Metropolitan"},
+  
+    {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have been rung up during recruitment phone calling",
+  "goal":"440453",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Metropolitan"},
+  
+  
+  
+     {"name":"Total attempts",
+  "info":"This is the total number of one on ones attempted.",
+  "goal":"440453",
+  "activity":"One On One",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"This is the total number of meaningful interactions had from one on ones.",
+  "goal":"440453",
+  "activity":"One On One",
+  "context":"Northern Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people at the neighbourhood team meeting.",
+  "goal":"440453",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number neighbourhood team meetings to be had.",
+  "goal":"440453",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Northern Metropolitan"},
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people who attended the gathering.",
+  "goal":"440453",
+  "activity":"Volunteer House Gathering",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number volunteer house gatherings to be had.",
+  "goal":"440453",
+  "activity":"Volunteer House Gathering",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have attended the house gathering.",
+  "goal":"440453",
+  "activity":"Volunteer House Gathering",
+  "context":"Northern Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number stalls to have.",
+  "goal":"440453",
+  "activity":"Stall",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers attending the stall for the campaign. Non unique, meaning a person who has previously been to a stall is counted again if they attend another stall event.",
+  "goal":"440453",
+  "activity":"Stall",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of conversations had whilst at the stall.",
+  "goal":"440453",
+  "activity":"Stall",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from the stall.",
+  "goal":"440453",
+  "activity":"Stall",
+  "context":"Northern Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number voter house meetings to have.",
+  "goal":"440453",
+  "activity":"Voter House Meeting",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending voter house meetings for the entire campaign. Non unique, meaning a person who has previously been to a voter house meeting is counted again if they attend another.",
+  "goal":"440453",
+  "activity":"Voter House Meeting",
+  "context":"Northern Metropolitan"},
+
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number training sessions to have.",
+  "goal":"440453",
+  "activity":"Training Session",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending training sessions for the campaign. Non unique, meaning a person who has previously been to a training session is counted again if they attend another.",
+  "goal":"440453",
+  "activity":"Training Session",
+  "context":"Northern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"440453",
+  "activity":"Training Session",
+  "context":"Northern Metropolitan"},
+
+
+  {"name":"Total attempts",
+  "info":"This is the total number of doors knocked on.",
+  "goal":"453913",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of doors actually answered.",
+  "goal":"453913",
+  "activity":"Door Knocking",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from doors answered.",
+  "goal":"453913",
+  "activity":"Door Knocking",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent door knocking. If 5 people knocked for 10hrs then this would mean 50hrs total spent.",
+  "goal":"453913",
+  "activity":"Door Knocking",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hourse spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"453913",
+  "activity":"Door Knocking",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with door knocking for the entire campaign.",
+  "goal":"453913",
+  "activity":"Door Knocking",
+  "context":"Northern Victoria"},
+  
+  
+  
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"453913",
+  "activity":"Phone Banking",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"453913",
+  "activity":"Phone Banking",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"453913",
+  "activity":"Phone Banking",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"453913",
+  "activity":"Phone Banking",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"453913",
+  "activity":"Phone Banking",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the entire campaign.",
+  "goal":"453913",
+  "activity":"Phone Banking",
+  "context":"Northern Victoria"},
+  
+  
+  
+  
+   {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"453913",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"453913",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"453913",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"453913",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"453913",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the campaign. Non unique, meaning a person who has previously done phone calling is counted again if they do phone calling again.",
+  "goal":"453913",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Victoria"},
+  
+    {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have been rung up during recruitment phone calling",
+  "goal":"453913",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Northern Victoria"},
+  
+  
+  
+     {"name":"Total attempts",
+  "info":"This is the total number of one on ones attempted.",
+  "goal":"453913",
+  "activity":"One On One",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"This is the total number of meaningful interactions had from one on ones.",
+  "goal":"453913",
+  "activity":"One On One",
+  "context":"Northern Victoria"},
+  
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people at the neighbourhood team meeting.",
+  "goal":"453913",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number neighbourhood team meetings to be had.",
+  "goal":"453913",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Northern Victoria"},
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people who attended the gathering.",
+  "goal":"453913",
+  "activity":"Volunteer House Gathering",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number volunteer house gatherings to be had.",
+  "goal":"453913",
+  "activity":"Volunteer House Gathering",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have attended the house gathering.",
+  "goal":"453913",
+  "activity":"Volunteer House Gathering",
+  "context":"Northern Victoria"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number stalls to have.",
+  "goal":"453913",
+  "activity":"Stall",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers attending the stall for the campaign. Non unique, meaning a person who has previously been to a stall is counted again if they attend another stall event.",
+  "goal":"453913",
+  "activity":"Stall",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of conversations had whilst at the stall.",
+  "goal":"453913",
+  "activity":"Stall",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from the stall.",
+  "goal":"453913",
+  "activity":"Stall",
+  "context":"Northern Victoria"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number voter house meetings to have.",
+  "goal":"453913",
+  "activity":"Voter House Meeting",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending voter house meetings for the entire campaign. Non unique, meaning a person who has previously been to a voter house meeting is counted again if they attend another.",
+  "goal":"453913",
+  "activity":"Voter House Meeting",
+  "context":"Northern Victoria"},
+
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number training sessions to have.",
+  "goal":"453913",
+  "activity":"Training Session",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending training sessions for the campaign. Non unique, meaning a person who has previously been to a training session is counted again if they attend another.",
+  "goal":"453913",
+  "activity":"Training Session",
+  "context":"Northern Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"453913",
+  "activity":"Training Session",
+  "context":"Northern Victoria"},
+
+
+  {"name":"Total attempts",
+  "info":"This is the total number of doors knocked on.",
+  "goal":"457533",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of doors actually answered.",
+  "goal":"457533",
+  "activity":"Door Knocking",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from doors answered.",
+  "goal":"457533",
+  "activity":"Door Knocking",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent door knocking. If 5 people knocked for 10hrs then this would mean 50hrs total spent.",
+  "goal":"457533",
+  "activity":"Door Knocking",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hourse spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"457533",
+  "activity":"Door Knocking",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with door knocking for the entire campaign.",
+  "goal":"457533",
+  "activity":"Door Knocking",
+  "context":"South Eastern Metropolitan"},
+  
+  
+  
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"457533",
+  "activity":"Phone Banking",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"457533",
+  "activity":"Phone Banking",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"457533",
+  "activity":"Phone Banking",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"457533",
+  "activity":"Phone Banking",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"457533",
+  "activity":"Phone Banking",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the entire campaign.",
+  "goal":"457533",
+  "activity":"Phone Banking",
+  "context":"South Eastern Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"457533",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"457533",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"457533",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"457533",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"457533",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the campaign. Non unique, meaning a person who has previously done phone calling is counted again if they do phone calling again.",
+  "goal":"457533",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"South Eastern Metropolitan"},
+  
+    {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have been rung up during recruitment phone calling",
+  "goal":"457533",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"South Eastern Metropolitan"},
+  
+  
+  
+     {"name":"Total attempts",
+  "info":"This is the total number of one on ones attempted.",
+  "goal":"457533",
+  "activity":"One On One",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"This is the total number of meaningful interactions had from one on ones.",
+  "goal":"457533",
+  "activity":"One On One",
+  "context":"South Eastern Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people at the neighbourhood team meeting.",
+  "goal":"457533",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number neighbourhood team meetings to be had.",
+  "goal":"457533",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"South Eastern Metropolitan"},
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people who attended the gathering.",
+  "goal":"457533",
+  "activity":"Volunteer House Gathering",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number volunteer house gatherings to be had.",
+  "goal":"457533",
+  "activity":"Volunteer House Gathering",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have attended the house gathering.",
+  "goal":"457533",
+  "activity":"Volunteer House Gathering",
+  "context":"South Eastern Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number stalls to have.",
+  "goal":"457533",
+  "activity":"Stall",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers attending the stall for the campaign. Non unique, meaning a person who has previously been to a stall is counted again if they attend another stall event.",
+  "goal":"457533",
+  "activity":"Stall",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of conversations had whilst at the stall.",
+  "goal":"457533",
+  "activity":"Stall",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from the stall.",
+  "goal":"457533",
+  "activity":"Stall",
+  "context":"South Eastern Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number voter house meetings to have.",
+  "goal":"457533",
+  "activity":"Voter House Meeting",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending voter house meetings for the entire campaign. Non unique, meaning a person who has previously been to a voter house meeting is counted again if they attend another.",
+  "goal":"457533",
+  "activity":"Voter House Meeting",
+  "context":"South Eastern Metropolitan"},
+
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number training sessions to have.",
+  "goal":"457533",
+  "activity":"Training Session",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending training sessions for the campaign. Non unique, meaning a person who has previously been to a training session is counted again if they attend another.",
+  "goal":"457533",
+  "activity":"Training Session",
+  "context":"South Eastern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"457533",
+  "activity":"Training Session",
+  "context":"South Eastern Metropolitan"},
+
+
+  {"name":"Total attempts",
+  "info":"This is the total number of doors knocked on.",
+  "goal":"444457",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of doors actually answered.",
+  "goal":"444457",
+  "activity":"Door Knocking",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from doors answered.",
+  "goal":"444457",
+  "activity":"Door Knocking",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent door knocking. If 5 people knocked for 10hrs then this would mean 50hrs total spent.",
+  "goal":"444457",
+  "activity":"Door Knocking",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hourse spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"444457",
+  "activity":"Door Knocking",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with door knocking for the entire campaign.",
+  "goal":"444457",
+  "activity":"Door Knocking",
+  "context":"Southern Metropolitan"},
+  
+  
+  
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"444457",
+  "activity":"Phone Banking",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"444457",
+  "activity":"Phone Banking",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"444457",
+  "activity":"Phone Banking",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"444457",
+  "activity":"Phone Banking",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"444457",
+  "activity":"Phone Banking",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the entire campaign.",
+  "goal":"444457",
+  "activity":"Phone Banking",
+  "context":"Southern Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"444457",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"444457",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"444457",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"444457",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"444457",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the campaign. Non unique, meaning a person who has previously done phone calling is counted again if they do phone calling again.",
+  "goal":"444457",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Southern Metropolitan"},
+  
+    {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have been rung up during recruitment phone calling",
+  "goal":"444457",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Southern Metropolitan"},
+  
+  
+  
+     {"name":"Total attempts",
+  "info":"This is the total number of one on ones attempted.",
+  "goal":"444457",
+  "activity":"One On One",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"This is the total number of meaningful interactions had from one on ones.",
+  "goal":"444457",
+  "activity":"One On One",
+  "context":"Southern Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people at the neighbourhood team meeting.",
+  "goal":"444457",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number neighbourhood team meetings to be had.",
+  "goal":"444457",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Southern Metropolitan"},
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people who attended the gathering.",
+  "goal":"444457",
+  "activity":"Volunteer House Gathering",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number volunteer house gatherings to be had.",
+  "goal":"444457",
+  "activity":"Volunteer House Gathering",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have attended the house gathering.",
+  "goal":"444457",
+  "activity":"Volunteer House Gathering",
+  "context":"Southern Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number stalls to have.",
+  "goal":"444457",
+  "activity":"Stall",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers attending the stall for the campaign. Non unique, meaning a person who has previously been to a stall is counted again if they attend another stall event.",
+  "goal":"444457",
+  "activity":"Stall",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of conversations had whilst at the stall.",
+  "goal":"444457",
+  "activity":"Stall",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from the stall.",
+  "goal":"444457",
+  "activity":"Stall",
+  "context":"Southern Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number voter house meetings to have.",
+  "goal":"444457",
+  "activity":"Voter House Meeting",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending voter house meetings for the entire campaign. Non unique, meaning a person who has previously been to a voter house meeting is counted again if they attend another.",
+  "goal":"444457",
+  "activity":"Voter House Meeting",
+  "context":"Southern Metropolitan"},
+
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number training sessions to have.",
+  "goal":"444457",
+  "activity":"Training Session",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending training sessions for the campaign. Non unique, meaning a person who has previously been to a training session is counted again if they attend another.",
+  "goal":"444457",
+  "activity":"Training Session",
+  "context":"Southern Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"444457",
+  "activity":"Training Session",
+  "context":"Southern Metropolitan"},
+
+
+  {"name":"Total attempts",
+  "info":"This is the total number of doors knocked on.",
+  "goal":"451213",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of doors actually answered.",
+  "goal":"451213",
+  "activity":"Door Knocking",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from doors answered.",
+  "goal":"451213",
+  "activity":"Door Knocking",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent door knocking. If 5 people knocked for 10hrs then this would mean 50hrs total spent.",
+  "goal":"451213",
+  "activity":"Door Knocking",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hourse spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"451213",
+  "activity":"Door Knocking",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with door knocking for the entire campaign.",
+  "goal":"451213",
+  "activity":"Door Knocking",
+  "context":"Western Metropolitan"},
+  
+  
+  
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"451213",
+  "activity":"Phone Banking",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"451213",
+  "activity":"Phone Banking",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"451213",
+  "activity":"Phone Banking",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"451213",
+  "activity":"Phone Banking",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"451213",
+  "activity":"Phone Banking",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the entire campaign.",
+  "goal":"451213",
+  "activity":"Phone Banking",
+  "context":"Western Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"451213",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"451213",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"451213",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"451213",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"451213",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the campaign. Non unique, meaning a person who has previously done phone calling is counted again if they do phone calling again.",
+  "goal":"451213",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Metropolitan"},
+  
+    {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have been rung up during recruitment phone calling",
+  "goal":"451213",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Metropolitan"},
+  
+  
+  
+     {"name":"Total attempts",
+  "info":"This is the total number of one on ones attempted.",
+  "goal":"451213",
+  "activity":"One On One",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"This is the total number of meaningful interactions had from one on ones.",
+  "goal":"451213",
+  "activity":"One On One",
+  "context":"Western Metropolitan"},
+  
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people at the neighbourhood team meeting.",
+  "goal":"451213",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number neighbourhood team meetings to be had.",
+  "goal":"451213",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Western Metropolitan"},
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people who attended the gathering.",
+  "goal":"451213",
+  "activity":"Volunteer House Gathering",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number volunteer house gatherings to be had.",
+  "goal":"451213",
+  "activity":"Volunteer House Gathering",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have attended the house gathering.",
+  "goal":"451213",
+  "activity":"Volunteer House Gathering",
+  "context":"Western Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number stalls to have.",
+  "goal":"451213",
+  "activity":"Stall",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers attending the stall for the campaign. Non unique, meaning a person who has previously been to a stall is counted again if they attend another stall event.",
+  "goal":"451213",
+  "activity":"Stall",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of conversations had whilst at the stall.",
+  "goal":"451213",
+  "activity":"Stall",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from the stall.",
+  "goal":"451213",
+  "activity":"Stall",
+  "context":"Western Metropolitan"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number voter house meetings to have.",
+  "goal":"451213",
+  "activity":"Voter House Meeting",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending voter house meetings for the entire campaign. Non unique, meaning a person who has previously been to a voter house meeting is counted again if they attend another.",
+  "goal":"451213",
+  "activity":"Voter House Meeting",
+  "context":"Western Metropolitan"},
+
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number training sessions to have.",
+  "goal":"451213",
+  "activity":"Training Session",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending training sessions for the campaign. Non unique, meaning a person who has previously been to a training session is counted again if they attend another.",
+  "goal":"451213",
+  "activity":"Training Session",
+  "context":"Western Metropolitan"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"451213",
+  "activity":"Training Session",
+  "context":"Western Metropolitan"},
+
+
+  {"name":"Total attempts",
+  "info":"This is the total number of doors knocked on.",
+  "goal":"453797",
+  "context":"Western Victoria"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of doors actually answered.",
+  "goal":"453797",
+  "activity":"Door Knocking",
+  "context":"Western Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from doors answered.",
+  "goal":"453797",
+  "activity":"Door Knocking",
+  "context":"Western Victoria"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent door knocking. If 5 people knocked for 10hrs then this would mean 50hrs total spent.",
+  "goal":"453797",
+  "activity":"Door Knocking",
+  "context":"Western Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hourse spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"453797",
+  "activity":"Door Knocking",
+  "context":"Western Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with door knocking for the entire campaign.",
+  "goal":"453797",
+  "activity":"Door Knocking",
+  "context":"Western Victoria"},
+  
+  
+  
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"453797",
+  "activity":"Phone Banking",
+  "context":"Western Victoria"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"453797",
+  "activity":"Phone Banking",
+  "context":"Western Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"453797",
+  "activity":"Phone Banking",
+  "context":"Western Victoria"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"453797",
+  "activity":"Phone Banking",
+  "context":"Western Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"453797",
+  "activity":"Phone Banking",
+  "context":"Western Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the entire campaign.",
+  "goal":"453797",
+  "activity":"Phone Banking",
+  "context":"Western Victoria"},
+  
+  
+  
+  
+   {"name":"Total attempts",
+  "info":"This is the total number of calls made.",
+  "goal":"453797",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Victoria"},
+  
+  {"name":"Total answered",
+  "info":"This is the total number of phones actually answered.",
+  "goal":"453797",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from calls answered.",
+  "goal":"453797",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Victoria"},
+  
+  {"name":"Total volunteer hours spent",
+  "info":"Total hours spent calling. If 5 people called for 10hrs then this would mean 50hrs total spent.",
+  "goal":"453797",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"453797",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers involved with phone calling for the campaign. Non unique, meaning a person who has previously done phone calling is counted again if they do phone calling again.",
+  "goal":"453797",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Victoria"},
+  
+    {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have been rung up during recruitment phone calling",
+  "goal":"453797",
+  "activity":"Volunteer Recruitment Phone Calling",
+  "context":"Western Victoria"},
+  
+  
+  
+     {"name":"Total attempts",
+  "info":"This is the total number of one on ones attempted.",
+  "goal":"453797",
+  "activity":"One On One",
+  "context":"Western Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"This is the total number of meaningful interactions had from one on ones.",
+  "goal":"453797",
+  "activity":"One On One",
+  "context":"Western Victoria"},
+  
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people at the neighbourhood team meeting.",
+  "goal":"453797",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Western Victoria"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number neighbourhood team meetings to be had.",
+  "goal":"453797",
+  "activity":"Neighbourhood Team Meeting",
+  "context":"Western Victoria"},
+  
+  
+  
+   {"name":"Total attendance",
+  "info":"This is the total number people who attended the gathering.",
+  "goal":"453797",
+  "activity":"Volunteer House Gathering",
+  "context":"Western Victoria"},
+  
+  {"name":"Total number of events",
+  "info":"This is the total number volunteer house gatherings to be had.",
+  "goal":"453797",
+  "activity":"Volunteer House Gathering",
+  "context":"Western Victoria"},
+  
+  {"name":"Total volunteer hours committed",
+  "info":"Total number of hours committed by people who have attended the house gathering.",
+  "goal":"453797",
+  "activity":"Volunteer House Gathering",
+  "context":"Western Victoria"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number stalls to have.",
+  "goal":"453797",
+  "activity":"Stall",
+  "context":"Western Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of volunteers attending the stall for the campaign. Non unique, meaning a person who has previously been to a stall is counted again if they attend another stall event.",
+  "goal":"453797",
+  "activity":"Stall",
+  "context":"Western Victoria"},
+  
+  {"name":"Total attempts",
+  "info":"This is the total number of conversations had whilst at the stall.",
+  "goal":"453797",
+  "activity":"Stall",
+  "context":"Western Victoria"},
+  
+  {"name":"Total meaningful interactions",
+  "info":"Total meaniningful interactions made from the stall.",
+  "goal":"453797",
+  "activity":"Stall",
+  "context":"Western Victoria"},
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number voter house meetings to have.",
+  "goal":"453797",
+  "activity":"Voter House Meeting",
+  "context":"Western Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending voter house meetings for the entire campaign. Non unique, meaning a person who has previously been to a voter house meeting is counted again if they attend another.",
+  "goal":"453797",
+  "activity":"Voter House Meeting",
+  "context":"Western Victoria"},
+
+  
+  
+  
+  {"name":"Total number of events",
+  "info":"This is the total number training sessions to have.",
+  "goal":"453797",
+  "activity":"Training Session",
+  "context":"Western Victoria"},
+  
+  {"name":"Total attendance",
+  "info":"Total number of people attending training sessions for the campaign. Non unique, meaning a person who has previously been to a training session is counted again if they attend another.",
+  "goal":"453797",
+  "activity":"Training Session",
+  "context":"Western Victoria"},
+  
+  {"name":"Total volunteer training hours",
+  "info":"Total hours spent training all volunteers. If 5 volunteers were each trained for 2 hours each, then it would be 10 hours total training.",
+  "goal":"453797",
+  "activity":"Training Session",
+  "context":"Western Victoria"}
+
+]
+

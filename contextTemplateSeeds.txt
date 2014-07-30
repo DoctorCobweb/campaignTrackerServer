@@ -1,0 +1,586 @@
+[
+{
+     "name":"Statewide",
+     "info":"yadda yadda this is Statewide info",
+     "population":448212,
+     "metrics":[]
+   },
+
+{
+     "name":"Eastern Metropolitan",
+     "info":"yadda yadda this is region Eastern Metropolitan info",
+     "population":448212,
+     "metrics":[]
+   },
+{
+     "name":"Eastern Victoria",
+     "info":"yadda yadda this is region Eastern Victoria info",
+     "population":458806,
+     "metrics":[]
+   },
+{
+     "name":"Northern Metropolitan",
+     "info":"yadda yadda this is region Northern Metropolitan info",
+     "population":452112,
+     "metrics":[]
+   },
+{
+     "name":"Northern Victoria",
+     "info":"yadda yadda this is region Northern Victoria info",
+     "population":444706,
+     "metrics":[]
+   },
+{
+     "name":"South Eastern Metropolitan",
+     "info":"yadda yadda this is region South Eastern Metropolitan info",
+     "population":452653,
+     "metrics":[]
+   },
+{
+     "name":"Southern Metropolitan",
+     "info":"yadda yadda this is region Southern Metropolitan info",
+     "population":440416,
+     "metrics":[]
+   },
+{
+     "name":"Western Metropolitan",
+     "info":"yadda yadda this is region Western Metropolitan info",
+     "population":450325,
+     "metrics":[]
+   },
+{
+     "name":"Western Victoria",
+     "info":"yadda yadda this is region Western Victoria info",
+     "population":459065,
+     "metrics":[]
+   },
+{
+     "name":"Bayswater",
+     "info":"yadda yadda this is districtBayswater info",
+     "population":64247,
+     "metrics":[]
+   },
+{
+     "name":"Box Hill",
+     "info":"yadda yadda this is districtBox Hill info",
+     "population":55359,
+     "metrics":[]
+   },
+{
+     "name":"Bulleen",
+     "info":"yadda yadda this is districtBulleen info",
+     "population":52968,
+     "metrics":[]
+   },
+{
+     "name":"Doncaster",
+     "info":"yadda yadda this is districtDoncaster info",
+     "population":64704,
+     "metrics":[]
+   },
+{
+     "name":"Eltham",
+     "info":"yadda yadda this is districtEltham info",
+     "population":60250,
+     "metrics":[]
+   },
+{
+     "name":"Ferntree Gully",
+     "info":"yadda yadda this is districtFerntree Gully info",
+     "population":47387,
+     "metrics":[]
+   },
+{
+     "name":"Forest Hill",
+     "info":"yadda yadda this is districtForest Hill info",
+     "population":51244,
+     "metrics":[]
+   },
+{
+     "name":"Kilsyth",
+     "info":"yadda yadda this is districtKilsyth info",
+     "population":56780,
+     "metrics":[]
+   },
+{
+     "name":"Mitcham",
+     "info":"yadda yadda this is districtMitcham info",
+     "population":55726,
+     "metrics":[]
+   },
+{
+     "name":"Scoresby",
+     "info":"yadda yadda this is districtScoresby info",
+     "population":46359,
+     "metrics":[]
+   },
+{
+     "name":"Warrandyte",
+     "info":"yadda yadda this is districtWarrandyte info",
+     "population":54467,
+     "metrics":[]
+   },
+{
+     "name":"Bass",
+     "info":"yadda yadda this is districtBass info",
+     "population":59909,
+     "metrics":[]
+   },
+{
+     "name":"Evelyn",
+     "info":"yadda yadda this is districtEvelyn info",
+     "population":62485,
+     "metrics":[]
+   },
+{
+     "name":"Gembrook",
+     "info":"yadda yadda this is districtGembrook info",
+     "population":45863,
+     "metrics":[]
+   },
+{
+     "name":"Gippsland East",
+     "info":"yadda yadda this is districtGippsland East info",
+     "population":64816,
+     "metrics":[]
+   },
+{
+     "name":"Gippsland South",
+     "info":"yadda yadda this is districtGippsland South info",
+     "population":64354,
+     "metrics":[]
+   },
+{
+     "name":"Hastings",
+     "info":"yadda yadda this is districtHastings info",
+     "population":50123,
+     "metrics":[]
+   },
+{
+     "name":"Monbulk",
+     "info":"yadda yadda this is districtMonbulk info",
+     "population":61899,
+     "metrics":[]
+   },
+{
+     "name":"Mornington",
+     "info":"yadda yadda this is districtMornington info",
+     "population":46057,
+     "metrics":[]
+   },
+{
+     "name":"Morwell",
+     "info":"yadda yadda this is districtMorwell info",
+     "population":59657,
+     "metrics":[]
+   },
+{
+     "name":"Narracan",
+     "info":"yadda yadda this is districtNarracan info",
+     "population":56276,
+     "metrics":[]
+   },
+{
+     "name":"Nepean",
+     "info":"yadda yadda this is districtNepean info",
+     "population":55973,
+     "metrics":[]
+   },
+{
+     "name":"Broadmeadows",
+     "info":"yadda yadda this is districtBroadmeadows info",
+     "population":60377,
+     "metrics":[]
+   },
+{
+     "name":"Brunswick",
+     "info":"yadda yadda this is districtBrunswick info",
+     "population":61068,
+     "metrics":[]
+   },
+{
+     "name":"Bundoora",
+     "info":"yadda yadda this is districtBundoora info",
+     "population":50228,
+     "metrics":[]
+   },
+{
+     "name":"Ivanhoe",
+     "info":"yadda yadda this is districtIvanhoe info",
+     "population":62561,
+     "metrics":[]
+   },
+{
+     "name":"Melbourne",
+     "info":"yadda yadda this is districtMelbourne info",
+     "population":47041,
+     "metrics":[]
+   },
+{
+     "name":"Mill Park",
+     "info":"yadda yadda this is districtMill Park info",
+     "population":63981,
+     "metrics":[]
+   },
+{
+     "name":"Northcote",
+     "info":"yadda yadda this is districtNorthcote info",
+     "population":47924,
+     "metrics":[]
+   },
+{
+     "name":"Preston",
+     "info":"yadda yadda this is districtPreston info",
+     "population":55731,
+     "metrics":[]
+   },
+{
+     "name":"Richmond",
+     "info":"yadda yadda this is districtRichmond info",
+     "population":57295,
+     "metrics":[]
+   },
+{
+     "name":"Thomastown",
+     "info":"yadda yadda this is districtThomastown info",
+     "population":50069,
+     "metrics":[]
+   },
+{
+     "name":"Yan Yean",
+     "info":"yadda yadda this is districtYan Yean info",
+     "population":64048,
+     "metrics":[]
+   },
+{
+     "name":"Benalla",
+     "info":"yadda yadda this is districtBenalla info",
+     "population":63047,
+     "metrics":[]
+   },
+{
+     "name":"Benambra",
+     "info":"yadda yadda this is districtBenambra info",
+     "population":51916,
+     "metrics":[]
+   },
+{
+     "name":"Bendigo East",
+     "info":"yadda yadda this is districtBendigo East info",
+     "population":46125,
+     "metrics":[]
+   },
+{
+     "name":"Bendigo West",
+     "info":"yadda yadda this is districtBendigo West info",
+     "population":47400,
+     "metrics":[]
+   },
+{
+     "name":"Macedon",
+     "info":"yadda yadda this is districtMacedon info",
+     "population":48971,
+     "metrics":[]
+   },
+{
+     "name":"Mildura",
+     "info":"yadda yadda this is districtMildura info",
+     "population":57029,
+     "metrics":[]
+   },
+{
+     "name":"Murray Valley",
+     "info":"yadda yadda this is districtMurray Valley info",
+     "population":51074,
+     "metrics":[]
+   },
+{
+     "name":"Rodney",
+     "info":"yadda yadda this is districtRodney info",
+     "population":62218,
+     "metrics":[]
+   },
+{
+     "name":"Seymour",
+     "info":"yadda yadda this is districtSeymour info",
+     "population":55134,
+     "metrics":[]
+   },
+{
+     "name":"Shepparton",
+     "info":"yadda yadda this is districtShepparton info",
+     "population":63451,
+     "metrics":[]
+   },
+{
+     "name":"Swan Hill",
+     "info":"yadda yadda this is districtSwan Hill info",
+     "population":59657,
+     "metrics":[]
+   },
+{
+     "name":"Carrum",
+     "info":"yadda yadda this is districtCarrum info",
+     "population":54155,
+     "metrics":[]
+   },
+{
+     "name":"Clayton",
+     "info":"yadda yadda this is districtClayton info",
+     "population":47246,
+     "metrics":[]
+   },
+{
+     "name":"Cranbourne",
+     "info":"yadda yadda this is districtCranbourne info",
+     "population":56482,
+     "metrics":[]
+   },
+{
+     "name":"Dandenong",
+     "info":"yadda yadda this is districtDandenong info",
+     "population":54758,
+     "metrics":[]
+   },
+{
+     "name":"Frankston",
+     "info":"yadda yadda this is districtFrankston info",
+     "population":58509,
+     "metrics":[]
+   },
+{
+     "name":"Lyndhurst",
+     "info":"yadda yadda this is districtLyndhurst info",
+     "population":50718,
+     "metrics":[]
+   },
+{
+     "name":"Mordialloc",
+     "info":"yadda yadda this is districtMordialloc info",
+     "population":53005,
+     "metrics":[]
+   },
+{
+     "name":"Mount Waverley",
+     "info":"yadda yadda this is districtMount Waverley info",
+     "population":58164,
+     "metrics":[]
+   },
+{
+     "name":"Mulgrave",
+     "info":"yadda yadda this is districtMulgrave info",
+     "population":59963,
+     "metrics":[]
+   },
+{
+     "name":"Narre Warren North",
+     "info":"yadda yadda this is districtNarre Warren North info",
+     "population":47281,
+     "metrics":[]
+   },
+{
+     "name":"Narre Warren South",
+     "info":"yadda yadda this is districtNarre Warren South info",
+     "population":53338,
+     "metrics":[]
+   },
+{
+     "name":"Albert Park",
+     "info":"yadda yadda this is districtAlbert Park info",
+     "population":63930,
+     "metrics":[]
+   },
+{
+     "name":"Bentleigh",
+     "info":"yadda yadda this is districtBentleigh info",
+     "population":63985,
+     "metrics":[]
+   },
+{
+     "name":"Brighton",
+     "info":"yadda yadda this is districtBrighton info",
+     "population":55369,
+     "metrics":[]
+   },
+{
+     "name":"Burwood",
+     "info":"yadda yadda this is districtBurwood info",
+     "population":58313,
+     "metrics":[]
+   },
+{
+     "name":"Caulfield",
+     "info":"yadda yadda this is districtCaulfield info",
+     "population":61944,
+     "metrics":[]
+   },
+{
+     "name":"Hawthorn",
+     "info":"yadda yadda this is districtHawthorn info",
+     "population":58323,
+     "metrics":[]
+   },
+{
+     "name":"Kew",
+     "info":"yadda yadda this is districtKew info",
+     "population":58954,
+     "metrics":[]
+   },
+{
+     "name":"Malvern",
+     "info":"yadda yadda this is districtMalvern info",
+     "population":46399,
+     "metrics":[]
+   },
+{
+     "name":"Oakleigh",
+     "info":"yadda yadda this is districtOakleigh info",
+     "population":63097,
+     "metrics":[]
+   },
+{
+     "name":"Prahran",
+     "info":"yadda yadda this is districtPrahran info",
+     "population":49903,
+     "metrics":[]
+   },
+{
+     "name":"Sandringham",
+     "info":"yadda yadda this is districtSandringham info",
+     "population":50574,
+     "metrics":[]
+   },
+{
+     "name":"Altona",
+     "info":"yadda yadda this is districtAltona info",
+     "population":57597,
+     "metrics":[]
+   },
+{
+     "name":"Derrimut",
+     "info":"yadda yadda this is districtDerrimut info",
+     "population":55404,
+     "metrics":[]
+   },
+{
+     "name":"Essendon",
+     "info":"yadda yadda this is districtEssendon info",
+     "population":49462,
+     "metrics":[]
+   },
+{
+     "name":"Footscray",
+     "info":"yadda yadda this is districtFootscray info",
+     "population":58783,
+     "metrics":[]
+   },
+{
+     "name":"Keilor",
+     "info":"yadda yadda this is districtKeilor info",
+     "population":57830,
+     "metrics":[]
+   },
+{
+     "name":"Kororoit",
+     "info":"yadda yadda this is districtKororoit info",
+     "population":59515,
+     "metrics":[]
+   },
+{
+     "name":"Niddrie",
+     "info":"yadda yadda this is districtNiddrie info",
+     "population":64190,
+     "metrics":[]
+   },
+{
+     "name":"Pascoe Vale",
+     "info":"yadda yadda this is districtPascoe Vale info",
+     "population":59653,
+     "metrics":[]
+   },
+{
+     "name":"Tarneit",
+     "info":"yadda yadda this is districtTarneit info",
+     "population":57685,
+     "metrics":[]
+   },
+{
+     "name":"Williamstown",
+     "info":"yadda yadda this is districtWilliamstown info",
+     "population":61172,
+     "metrics":[]
+   },
+{
+     "name":"Yuroke",
+     "info":"yadda yadda this is districtYuroke info",
+     "population":60815,
+     "metrics":[]
+   },
+{
+     "name":"Ballarat East",
+     "info":"yadda yadda this is districtBallarat East info",
+     "population":48944,
+     "metrics":[]
+   },
+{
+     "name":"Ballarat West",
+     "info":"yadda yadda this is districtBallarat West info",
+     "population":54222,
+     "metrics":[]
+   },
+{
+     "name":"Bellarine",
+     "info":"yadda yadda this is districtBellarine info",
+     "population":60842,
+     "metrics":[]
+   },
+{
+     "name":"Geelong",
+     "info":"yadda yadda this is districtGeelong info",
+     "population":51677,
+     "metrics":[]
+   },
+{
+     "name":"Lara",
+     "info":"yadda yadda this is districtLara info",
+     "population":57735,
+     "metrics":[]
+   },
+{
+     "name":"Lowan",
+     "info":"yadda yadda this is districtLowan info",
+     "population":61855,
+     "metrics":[]
+   },
+{
+     "name":"Melton",
+     "info":"yadda yadda this is districtMelton info",
+     "population":62379,
+     "metrics":[]
+   },
+{
+     "name":"Polwarth",
+     "info":"yadda yadda this is districtPolwarth info",
+     "population":64397,
+     "metrics":[]
+   },
+{
+     "name":"Ripon",
+     "info":"yadda yadda this is districtRipon info",
+     "population":51544,
+     "metrics":[]
+   },
+{
+     "name":"South Barwon",
+     "info":"yadda yadda this is districtSouth Barwon info",
+     "population":47383,
+     "metrics":[]
+   },
+{
+     "name":"South-West Coast",
+     "info":"yadda yadda this is districtSouth-West Coast info",
+     "population":55411,
+     "metrics":[]
+   }
+]
+

@@ -53,27 +53,30 @@ exports.regionSummary = function(req, res) {
   });
 };
 
-/*
-// Get dashboard upperHouse 
-exports.regionSummary = function(req, res) {
-  console.log('region: ' + req.params.region);
-  Survey.find({region: req.params.region}, function (err, surveys) {
-    if(err) { return handleError(res, err); }
-    //return res.json(200, surveys);
-    //console.log(upperHouseUtils.upperHouseFilter(surveys));
-    return res.json(200, upperHouseUtils.upperHouseFilter(surveys));
-  });
-};
-*/
 
 // Get dashboard lowerHouse 
 exports.districtSummary = function(req, res) {
   Survey.find({district: req.params.district}, function (err, surveys) {
     if(err) { return handleError(res, err); }
-    //return res.json(200, surveys);
-    return res.json(200, lowerHouseUtils.lowerHouseFilter(surveys));
+    console.log('district: ' + req.params.district);
+    console.log('surveys:');
+    console.dir(surveys);
+
+
+    //must check if surveys are null for a district 
+    if (!surveys) {return handleError(res, err);}
+
+    lowerHouseUtils.lowerHouseSummaryFilter(
+      surveys,
+      req.params.district,
+      function(error, results) {
+        if(error) { return handleError(res, error); }
+        return res.json(200, results);
+      });
   });
 };
+
+
 
 // Get dashboard person 
 exports.personSummary = function(req, res) {
