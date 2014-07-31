@@ -6,7 +6,7 @@ var Context= require('../context/context.model');
 var StatsClass= require('../../components/StatsClass');
 
 
-exports.overviewFilter = function (surveys, sentContext, cb) {
+exports.summary = function (surveys, sentContext, cb) {
 
   attachAllMetricsToContext();
 
@@ -15,6 +15,7 @@ exports.overviewFilter = function (surveys, sentContext, cb) {
     Metric.find({context: sentContext}, function (err, metrics) {
       if (err) return handleError(err);
       console.log('have all the metrics for sentContext:' + sentContext);
+      console.log('metrics.length:');
       console.log(metrics.length);
   
       //if there are no metrics for the context, return
@@ -24,8 +25,8 @@ exports.overviewFilter = function (surveys, sentContext, cb) {
         if (err) return handleError(err);
         if (!context) return handleError({'ERROR':'context is null'});
 
-        console.log('context:');
-        console.log(context);
+        //console.log('context:');
+        //console.log(context);
   
   
         //HACK: if there are metrics already associated with the context, do not add
@@ -62,9 +63,10 @@ exports.overviewFilter = function (surveys, sentContext, cb) {
       .populate('metrics')
       .exec(function (err, context) {
         if (err) return cb(err);
-        console.dir(context);
-        console.log('The metrics in context are: ');
-        console.dir(context[0].metrics);
+        //console.dir('context:');
+        //console.dir(context);
+        //console.log('The metrics in context are: ');
+        //console.dir(context[0].metrics);
         
         var stats = new StatsClass(surveys, context, context[0].metrics);
         var summaryStats = stats.getSummaryStats();
@@ -73,7 +75,7 @@ exports.overviewFilter = function (surveys, sentContext, cb) {
       });
   };
 
-}; //end overviewFilter
+}; //end summary 
 
 
 

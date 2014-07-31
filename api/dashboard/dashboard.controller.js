@@ -3,9 +3,7 @@
 var _ = require('lodash');
 var Dashboard = require('./dashboard.model');
 var Survey = require('../survey/survey.model');
-var overviewUtils = require('./overviewUtils');
-var upperHouseUtils = require('./upperHouseUtils');
-var lowerHouseUtils = require('./lowerHouseUtils');
+var statsUtils = require('./statsUtils');
 var personUtils = require('./personUtils');
 var neighbourhoodTeamUtils = require('./neighbourhoodTeamUtils');
 
@@ -19,12 +17,13 @@ exports.index = function(req, res) {
 
 
 
-// Get dashboard overview 
-exports.statewide = function(req, res) {
+// Get dashboard statewide summary 
+exports.statewideSummary = function(req, res) {
   Survey.find(function (err, surveys) {
     if(err) { return handleError(res, err); }
 
-    overviewUtils.overviewFilter(surveys, 'Statewide', function (error, results){
+    //statewideUtils.summary(surveys, 'Statewide', function (error, results){
+    statsUtils.summary(surveys, 'Statewide', function (error, results){
       if(error) { return handleError(res, error); }
       return res.json(200, results);
     });
@@ -37,16 +36,14 @@ exports.regionSummary = function(req, res) {
   Survey.find({region: req.params.region}, function (err, surveys) {
     if(err) { return handleError(res, err); }
     console.log('region: ' + req.params.region);
-    console.log('surveys:');
-    console.dir(surveys);
+    //console.log('surveys:');
+    //console.dir(surveys);
 
     //must check if surveys are null for a region
     if (!surveys) {return handleError(res, err);}
 
-    upperHouseUtils.upperHouseSummaryFilter(
-      surveys,
-      req.params.region,
-      function(error, results) {
+    //upperHouseUtils.summary(surveys, req.params.region, function(error, results) {
+    statsUtils.summary(surveys, req.params.region, function(error, results) {
         if(error) { return handleError(res, error); }
         return res.json(200, results);
       });
@@ -59,17 +56,15 @@ exports.districtSummary = function(req, res) {
   Survey.find({district: req.params.district}, function (err, surveys) {
     if(err) { return handleError(res, err); }
     console.log('district: ' + req.params.district);
-    console.log('surveys:');
-    console.dir(surveys);
+    //console.log('surveys:');
+    //console.dir(surveys);
 
 
     //must check if surveys are null for a district 
     if (!surveys) {return handleError(res, err);}
 
-    lowerHouseUtils.lowerHouseSummaryFilter(
-      surveys,
-      req.params.district,
-      function(error, results) {
+    //lowerHouseUtils.summary(surveys, req.params.district, function(error, results) {
+    statsUtils.summary(surveys, req.params.district, function(error, results) {
         if(error) { return handleError(res, error); }
         return res.json(200, results);
       });
