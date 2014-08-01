@@ -5,6 +5,98 @@ var Metric = require('../metric/metric.model');
 var Context= require('../context/context.model');
 var StatsClass= require('../../components/StatsClass');
 
+exports.tracking = function (surveys, sentContext, cb) {
+  cb(null, "returns from tracking");
+};
+
+exports.analysis = function (surveys, sentContext, cb) {
+  var data = {};
+  var totalSurveys;
+  var splitActivities;
+  var allActivities = [
+    'Door Knocking',
+    'Phone Banking',
+    'Volunteer Recruitment Phone Calling',
+    'One On One',
+    'Neighbourhood Team Meeting',
+    'Volunteer House Gathering',
+    'Stall',
+    'Voter House Meeting',
+    'Training Session'
+  ];
+
+  totalSurveys = _.chain(surveys)
+    .countBy(function(survey){return survey.activity[0].activityDate})
+    .pairs()
+    .map(function(pair){
+      return {
+        x: (new Date(pair[0]).getTime())/1000,
+        y: pair[1]
+      };
+    })
+    .sortBy(function(dateCount){return dateCount.x;})
+    .value();
+
+
+  splitActivities = _.chain(surveys)
+    .countBy(function(survey){return survey.activity[0].activityType})
+    .pairs()
+    .map(function(pair, index){
+      return {
+        x: pair[0],
+        y: pair[1]
+      };
+    })
+    .sortBy(function (dataCount) {return dataCount.x;})
+    .value();
+
+  //does not hold zero value activities
+  //console.log('splitActivities');
+  //console.dir(splitActivities);
+
+  //find which activities are present
+  var presentActivities = _.chain(splitActivities)
+    .pluck('x')
+    .value();
+
+  //find the missing ones (e.g. the activities with 0 surveys)
+  var difference = _.difference(allActivities, presentActivities);
+
+  //add in missing ones to splitActivities
+  var combined = _.forEach(difference, function (item) {
+    splitActivities.push({
+      x: item,
+      y: 0
+    });
+  });
+
+  //always order in terms of activity name
+  //need to keep things in order as we use a custom x axis formatter in rickshaw
+  //=> we translate back to activity name using x integer val
+  var ordered = _.sortBy(splitActivities, function (dataPoint){return dataPoint.x;});
+ 
+  //console.log('ordered');
+  //console.dir(ordered);
+  
+
+  //redo the values for order activities for rickshaw
+  var redoKeys = _.forEach(ordered, function (item, index) {
+    item.x = index+1;
+  });
+
+  //console.log('presentActivities');
+  //console.dir(presentActivities);
+  //console.log('difference');
+  //console.dir(difference);
+  //console.log('redoKeys');
+  //console.dir(redoKeys);
+
+  data.total = totalSurveys;
+  data.split = redoKeys;
+
+
+  cb(null, data);
+};
 
 exports.summary = function (surveys, sentContext, cb) {
 

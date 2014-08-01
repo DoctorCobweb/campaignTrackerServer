@@ -7,6 +7,8 @@ var router = express.Router();
 
 router.get('/', controller.index);
 router.get('/statewide/summary', controller.statewideSummary);
+router.get('/statewide/analysis', controller.statewideAnalysis);
+router.get('/statewide/tracking', controller.statewideTracking);
 router.get('/region/:region/summary', controller.regionSummary);
 router.get('/district/:district/summary', controller.districtSummary);
 

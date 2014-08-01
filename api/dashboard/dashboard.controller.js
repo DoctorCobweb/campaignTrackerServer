@@ -9,20 +9,21 @@ var neighbourhoodTeamUtils = require('./neighbourhoodTeamUtils');
 
 // Get list of dashboards
 exports.index = function(req, res) {
-  Dashboard.find(function (err, dashboards) {
+  Survey.find(function (err, surveys) {
     if(err) { return handleError(res, err); }
-    return res.json(200, dashboards);
-  });
+    return res.json(200, surveys);
+    });
 };
 
 
-
+//
+// STATEWIDE ROUTES
+//
 // Get dashboard statewide summary 
 exports.statewideSummary = function(req, res) {
   Survey.find(function (err, surveys) {
     if(err) { return handleError(res, err); }
 
-    //statewideUtils.summary(surveys, 'Statewide', function (error, results){
     statsUtils.summary(surveys, 'Statewide', function (error, results){
       if(error) { return handleError(res, error); }
       return res.json(200, results);
@@ -30,7 +31,36 @@ exports.statewideSummary = function(req, res) {
   });
 };
 
+// Get dashboard statewide analysis 
+exports.statewideAnalysis = function(req, res) {
+  Survey.find(function (err, surveys) {
+    if(err) { return handleError(res, err); }
 
+    statsUtils.analysis(surveys, 'Statewide', function (error, results){
+      if(error) { return handleError(res, error); }
+      return res.json(200, results);
+    });
+  });
+};
+
+// Get dashboard statewide tracking 
+exports.statewideTracking = function(req, res) {
+  Survey.find(function (err, surveys) {
+    if(err) { return handleError(res, err); }
+
+    statsUtils.tracking(surveys, 'Statewide', function (error, results){
+      if(error) { return handleError(res, error); }
+      return res.json(200, results);
+    });
+  });
+};
+
+
+
+
+//
+// UPPER HOUSE ROUTES
+//
 // Get dashboard upperHouse summary
 exports.regionSummary = function(req, res) {
   Survey.find({region: req.params.region}, function (err, surveys) {
@@ -42,7 +72,6 @@ exports.regionSummary = function(req, res) {
     //must check if surveys are null for a region
     if (!surveys) {return handleError(res, err);}
 
-    //upperHouseUtils.summary(surveys, req.params.region, function(error, results) {
     statsUtils.summary(surveys, req.params.region, function(error, results) {
         if(error) { return handleError(res, error); }
         return res.json(200, results);
@@ -51,6 +80,9 @@ exports.regionSummary = function(req, res) {
 };
 
 
+//
+// LOWER HOUSE ROUTES
+//
 // Get dashboard lowerHouse 
 exports.districtSummary = function(req, res) {
   Survey.find({district: req.params.district}, function (err, surveys) {
@@ -63,7 +95,6 @@ exports.districtSummary = function(req, res) {
     //must check if surveys are null for a district 
     if (!surveys) {return handleError(res, err);}
 
-    //lowerHouseUtils.summary(surveys, req.params.district, function(error, results) {
     statsUtils.summary(surveys, req.params.district, function(error, results) {
         if(error) { return handleError(res, error); }
         return res.json(200, results);
