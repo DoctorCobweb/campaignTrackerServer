@@ -115,14 +115,81 @@ exports.analysis = function (surveys, sentContext, cb) {
 
   function makeIndividualActivityTimelineTotals() {
     var individualActivityTimelineTotals,
+      dayLength = 60 * 60 * 24 * 1000, //day length in milliseconds
+      i,
+      earliestActDate,
+      latestActDate,
       grouped,
       blooper,
-      allMapped = {};
+      allMapped = {},
+      deltaTime,
+      numberOfDays,
+      defaultValues = [],
+      dummyDataPoint = {},
+      paddedMapped = [];
 
+
+
+    //outputs an object with activity name as keys and arrays of surveys for that 
+    //activity as values
     grouped = _.groupBy(surveys, function (survey) {
       return survey.activity[0].activityType;
     });
-    //console.dir(yadda);
+    //console.dir('grouped');
+    //console.dir(grouped);
+
+
+    //calc earliest activity date
+    _.forEach(grouped, function (val, key){
+      _.forEach(val, function (act) {
+        if (!earliestActDate) {
+          earliestActDate = act.activity[0].activityDate.getTime();
+          return;
+        };
+        if (act.activity[0].activityDate <= earliestActDate) {
+          earliestActDate = act.activity[0].activityDate.getTime();
+        }
+      });      
+    });
+
+
+    //calc latests activity date
+    _.forEach(grouped, function (val, key){
+      _.forEach(val, function (act) {
+        if (!latestActDate) {
+          latestActDate = act.activity[0].activityDate.getTime();
+          return;
+        };
+        if (act.activity[0].activityDate >= latestActDate) {
+          latestActDate = act.activity[0].activityDate.getTime();
+        }
+      });      
+    });
+
+
+    deltaTime = latestActDate - earliestActDate;
+    numberOfDays = deltaTime / dayLength;
+
+    console.log('latestActDate');
+    console.log(latestActDate);
+    console.log('latestActDate: ' + latestActDate);
+    console.log('earliestActDate' + earliestActDate);
+    console.log('deltaTime: ' + deltaTime);
+    console.log('numberOfDays: ' + numberOfDays);
+    
+    for (i = 0; i <= numberOfDays; i++) {
+      dummyDataPoint.x = (earliestActDate + (i * dayLength)) /1000; //back to seconds
+      dummyDataPoint.y = 0;
+      defaultValues.push(dummyDataPoint);
+    }
+    //console.log(defaultValues);
+
+
+    //want to find the earliest date activity and last date activity
+    //then generate a collection with every date from earliest to last. default to have
+    //null val for each date
+    //then for each activity we add count for the day to this collection
+    //=> ensures each activiy collection has the same length as required by rickshaw
 
     _.forEach(grouped, function (value, key) {
       var mappedAct =  _.chain(value)
@@ -140,31 +207,34 @@ exports.analysis = function (surveys, sentContext, cb) {
       //console.log(mappedAct);
       allMapped[key] = mappedAct;
     });
-    //console.dir('allMapped');
-    //console.dir(allMapped);
+    console.dir('allMapped');
+    console.dir(allMapped);
+
 
     //munge data into format expected by rickshaw 
-    /*
-    [
-      {name:'Door Knocking', data: [{}, {}, {}] },
-      {name:'Phone Banking', data: [{}, {}, {}]},
-      {name:'Stall', data: [{}, {}, {}]}
-    ]
-    */
-
-    var newFormat = [];
+    //[
+    //  {name:'Door Knocking', data: [{}, {}, {}] },
+    //  {name:'Phone Banking', data: [{}, {}, {}]},
+    //  {name:'Stall', data: [{}, {}, {}]}
+    //]
+    //and change all non zero data points in defaultValues corresponding to an activity
     _.forEach(allMapped, function (val, key) {
+      var tempDefaults = _.cloneDeep(defaultValues);
+      _.forEach(val, function (v, k) {
+        tempDefaults[k] = v;  
+      });
       var mObj = {};
-      mObj.name = key;
-      mObj.data = val;
-      newFormat.push(mObj);
+      mObj.name = key;      
+      mObj.data = _.sortBy(tempDefaults, function (item) {return item.x;});
+      paddedMapped.push(mObj);
     });
+    //console.dir('paddedMapped');
+    //console.dir(paddedMapped);
+    
 
-    console.dir('newFormat');
-    console.dir(newFormat);
- 
 
-    return newFormat;
+    //return newFormat;
+    return paddedMapped;
   };
 
 
