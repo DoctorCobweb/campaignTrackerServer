@@ -28,6 +28,7 @@ exports.analysis = function (surveys, sentContext, cb) {
   data.total =                  makeTotalSurveysData();
   data.activityTotals =         makeIndividualActivityTotals();
   data.activityTimelineTotals = makeIndividualActivityTimelineTotals();
+  data.activityConversions =    makeActivityConversions();
 
   //send data off
   cb(null, data);
@@ -89,6 +90,7 @@ exports.analysis = function (surveys, sentContext, cb) {
       });
     });
   
+    //*** IMPORTANT ****
     //always order in terms of activity name
     //need to keep things in order as we use a custom x axis formatter in rickshaw
     //=> we translate back to activity name using x integer val
@@ -146,7 +148,7 @@ exports.analysis = function (surveys, sentContext, cb) {
           earliestActDate = act.activity[0].activityDate.getTime();
           return;
         };
-        if (act.activity[0].activityDate <= earliestActDate) {
+        if (act.activity[0].activityDate.getTime() <= earliestActDate) {
           earliestActDate = act.activity[0].activityDate.getTime();
         }
       });      
@@ -160,7 +162,7 @@ exports.analysis = function (surveys, sentContext, cb) {
           latestActDate = act.activity[0].activityDate.getTime();
           return;
         };
-        if (act.activity[0].activityDate >= latestActDate) {
+        if (act.activity[0].activityDate.getTime() >= latestActDate) {
           latestActDate = act.activity[0].activityDate.getTime();
         }
       });      
@@ -170,14 +172,13 @@ exports.analysis = function (surveys, sentContext, cb) {
     deltaTime = latestActDate - earliestActDate;
     numberOfDays = deltaTime / dayLength;
 
-    console.log('latestActDate');
-    console.log(latestActDate);
-    console.log('latestActDate: ' + latestActDate);
-    console.log('earliestActDate' + earliestActDate);
-    console.log('deltaTime: ' + deltaTime);
-    console.log('numberOfDays: ' + numberOfDays);
+    //console.log('latestActDate: ' + latestActDate);
+    //console.log('earliestActDate: ' + earliestActDate);
+    //console.log('deltaTime: ' + deltaTime);
+    //console.log('numberOfDays: ' + numberOfDays);
     
     for (i = 0; i <= numberOfDays; i++) {
+      dummyDataPoint = {},
       dummyDataPoint.x = (earliestActDate + (i * dayLength)) /1000; //back to seconds
       dummyDataPoint.y = 0;
       defaultValues.push(dummyDataPoint);
@@ -207,8 +208,8 @@ exports.analysis = function (surveys, sentContext, cb) {
       //console.log(mappedAct);
       allMapped[key] = mappedAct;
     });
-    console.dir('allMapped');
-    console.dir(allMapped);
+    //console.dir('allMapped');
+    //console.dir(allMapped);
 
 
     //munge data into format expected by rickshaw 
@@ -220,10 +221,12 @@ exports.analysis = function (surveys, sentContext, cb) {
     //and change all non zero data points in defaultValues corresponding to an activity
     _.forEach(allMapped, function (val, key) {
       var tempDefaults = _.cloneDeep(defaultValues);
+      var mObj = {};
+
       _.forEach(val, function (v, k) {
         tempDefaults[k] = v;  
       });
-      var mObj = {};
+
       mObj.name = key;      
       mObj.data = _.sortBy(tempDefaults, function (item) {return item.x;});
       paddedMapped.push(mObj);
@@ -235,6 +238,85 @@ exports.analysis = function (surveys, sentContext, cb) {
 
     //return newFormat;
     return paddedMapped;
+  };
+
+
+
+  function makeActivityConversions() {
+    var individualActivityTotals,
+      grouped,
+      splitActivities,
+      presentActivities,
+      difference,
+      combined,
+      ordered;
+    
+    //outputs an object with activity name as keys and arrays of surveys for that 
+    //activity as values
+    grouped = _.groupBy(surveys, function (survey) {
+      return survey.activity[0].activityType;
+    });
+    //console.dir('grouped');
+    //console.dir(grouped);
+
+    //these are the only activities which have relevant metrics associated with them
+    //for making the activity conversions
+    var relevantActivities = [
+      'Door Knocking',
+      'Phone Banking',
+      'Volunteer Recruitment Phone Calling',
+      'One On One',
+      'Stall'
+    ];
+
+    //find which of the relevant activities we actually have in grouped collection
+    var presentRelevantActivities = _.intersection(_.keys(grouped), relevantActivities);
+    //console.log('_.keys(grouped)');
+    //console.log(_.keys(grouped));
+    //console.log('presentRelevantActivities');
+    //console.log(presentRelevantActivities);
+
+
+    var stats = [];
+    _.forEach(presentRelevantActivities, function (activityName) {
+      var accum = {};
+      accum.attempts = 0; 
+      accum.answers  = 0; 
+      accum.mis      = 0; 
+
+      var reduced = _.reduce(grouped[activityName], function (stat, survey) {
+
+        stat.attempts = stat.attempts + survey.activity[0].attempts; 
+        stat.answers  = stat.answers  + survey.activity[0].answered; 
+        stat.mis      = stat.mis      + survey.activity[0].meaningfulInteractions; 
+        return stat;
+      }, accum);
+
+      reduced.activity = activityName;
+      stats.push(reduced);
+    });
+
+    console.log('stats');
+    console.dir(stats);
+
+    //now transform these stats to percentages
+    var percentageStats = _.map(stats, function (actStats) {
+      var pStatContainer = {};
+      var pStat = {};
+      pStat.totAttemptsPercent = (actStats.attempts / actStats.attempts) * 100; 
+      pStat.totAnsweredPercent = (actStats.answers/ actStats.attempts) * 100; 
+      pStat.totMIPercent = (actStats.mis/ actStats.attempts) * 100; 
+      pStat.activity = actStats.activity;
+      //pStatContainer[actStats.activity] = pStat;
+      //return pStatContainer;
+      return pStat;
+    });     
+    console.log('percentageStats');
+    console.log(percentageStats);
+
+
+    //////////
+    return percentageStats;
   };
 
 

@@ -104,9 +104,9 @@ exports.districtSummary = function(req, res) {
 
 
 
-// Get dashboard person 
+// Get dashboard organizer person 
 exports.personSummary = function(req, res) {
-  Survey.find({personName: req.params.personName}, function (err, surveys) {
+  Survey.find({organizerName: req.params.organizerName}, function (err, surveys) {
     if(err) { return handleError(res, err); }
     //return res.json(200, surveys);
     return res.json(200, personUtils.personFilter(surveys));

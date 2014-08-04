@@ -7,7 +7,8 @@ var mongoose = require('mongoose'),
 var SurveySchema = new Schema({
   region:            {type: String, required:true}, 
   district:          {type:String, required:true},
-  personName:        {type:String, required:true},
+  organizerPerson:   {type:String, required:true},
+  dataEntryPerson:   {type:String, required:true},
   neighbourhoodTeam: String,
   loggedDate:        {type: Date, default: Date.now},
   activity:          [activity]
