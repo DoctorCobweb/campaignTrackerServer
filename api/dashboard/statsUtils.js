@@ -29,6 +29,7 @@ exports.analysis = function (surveys, sentContext, cb) {
   data.activityTotals =         makeIndividualActivityTotals();
   data.activityTimelineTotals = makeIndividualActivityTimelineTotals();
   data.activityConversions =    makeActivityConversions();
+  data.activityTotalVolWorkHrs =    makeActivityTotalVolWorkHrs();
 
   //send data off
   cb(null, data);
@@ -47,7 +48,7 @@ exports.analysis = function (surveys, sentContext, cb) {
       })
       .sortBy(function(dateCount){return dateCount.x;})
       .value();
-  };
+  }
 
   function makeIndividualActivityTotals() {
     var individualActivityTotals,
@@ -112,7 +113,7 @@ exports.analysis = function (surveys, sentContext, cb) {
     //console.log(individualActivityTotals);
 
     return individualActivityTotals;
-  };
+  }
 
 
   function makeIndividualActivityTimelineTotals() {
@@ -238,7 +239,7 @@ exports.analysis = function (surveys, sentContext, cb) {
 
     //return newFormat;
     return paddedMapped;
-  };
+  }
 
 
 
@@ -271,8 +272,6 @@ exports.analysis = function (surveys, sentContext, cb) {
 
     //find which of the relevant activities we actually have in grouped collection
     var presentRelevantActivities = _.intersection(_.keys(grouped), relevantActivities);
-    //console.log('_.keys(grouped)');
-    //console.log(_.keys(grouped));
     //console.log('presentRelevantActivities');
     //console.log(presentRelevantActivities);
 
@@ -315,9 +314,55 @@ exports.analysis = function (surveys, sentContext, cb) {
     console.log(percentageStats);
 
 
-    //////////
     return percentageStats;
-  };
+  }
+
+
+
+
+  function makeActivityTotalVolWorkHrs() {
+    console.log('MAKING ACTIVITY TOTAL VOL WORK HRS');
+    var grouped,
+      presentRelevantActivities,
+      relevantActivities = [
+        'Door Knocking',
+        'Phone Banking',
+        'Volunteer Recruitment Phone Calling'
+      ];
+
+    //outputs an object with activity name as keys and arrays of surveys for that 
+    //activity as values
+    grouped = _.groupBy(surveys, function (survey) {
+      return survey.activity[0].activityType;
+    });
+    console.dir('grouped');
+    console.dir(grouped);
+
+
+    //find which of the relevant activities we actually have in grouped collection
+    presentRelevantActivities = _.intersection(_.keys(grouped), relevantActivities);
+    console.log('presentRelevantActivities');
+    console.log(presentRelevantActivities);
+
+    var stats = [];
+    _.forEach(presentRelevantActivities, function (activityName) {
+      var accum = {};
+      accum.volTotalWorkHrs = 0; 
+
+      var reduced = _.reduce(grouped[activityName], function (stat, survey) {
+        stat.volTotalWorkHrs = stat.volTotalWorkHrs + survey.activity[0].volTotalWorkHrs; 
+        return stat;
+      }, accum);
+
+      reduced.activity = activityName;
+      stats.push(reduced);
+    });
+
+    console.log('stats');
+    console.dir(stats);
+
+    return stats;
+  }
 
 
 }; //end export.analysis
@@ -370,7 +415,7 @@ exports.summary = function (surveys, sentContext, cb) {
   
       });
     });
-  };
+  }
   
   
   
@@ -393,7 +438,7 @@ exports.summary = function (surveys, sentContext, cb) {
   
         cb(null, summaryStats);
       });
-  };
+  }
 
 }; //end exports.summary 
 

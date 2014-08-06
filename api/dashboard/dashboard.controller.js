@@ -79,6 +79,17 @@ exports.regionSummary = function(req, res) {
   });
 };
 
+// Get dashboard region analysis 
+exports.regionAnalysis = function(req, res) {
+  Survey.find({region: req.params.region}, function (err, surveys) {
+    if(err) { return handleError(res, err); }
+
+    statsUtils.analysis(surveys, req.params.region, function (error, results){
+      if(error) { return handleError(res, error); }
+      return res.json(200, results);
+    });
+  });
+};
 
 //
 // LOWER HOUSE ROUTES
@@ -103,7 +114,24 @@ exports.districtSummary = function(req, res) {
 };
 
 
+// Get dashboard district analysis 
+exports.districtAnalysis = function(req, res) {
+  Survey.find({district: req.params.district}, function (err, surveys) {
+    if(err) { return handleError(res, err); }
 
+    statsUtils.analysis(surveys, req.params.district, function (error, results){
+      if(error) { return handleError(res, error); }
+      return res.json(200, results);
+    });
+  });
+};
+
+
+
+
+
+//
+// PERSON ROUTES
 // Get dashboard organizer person 
 exports.personSummary = function(req, res) {
   Survey.find({organizerName: req.params.organizerName}, function (err, surveys) {
