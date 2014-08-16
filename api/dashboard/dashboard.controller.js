@@ -21,6 +21,9 @@ exports.index = function(req, res) {
 //
 // Get dashboard statewide summary 
 exports.statewideSummary = function(req, res) {
+  //we are only interested in surveys submitted by admins which are the leaders
+  //therefore query for loggedInRole === 'admin'
+  //this holds for other exports.xxxxx functions in this file
   Survey.find({loggedInRole: 'admin'}, function (err, surveys) {
     if(err) { return handleError(res, err); }
 
@@ -63,7 +66,11 @@ exports.statewideTracking = function(req, res) {
 //
 // Get dashboard upperHouse summary
 exports.regionSummary = function(req, res) {
-  Survey.find({region: req.params.region}, function (err, surveys) {
+  var query = {
+    region: req.params.region,
+    loggedInRole: 'admin'
+   };
+  Survey.find(query, function (err, surveys) {
     if(err) { return handleError(res, err); }
     console.log('region: ' + req.params.region);
     //console.log('surveys:');
@@ -81,7 +88,11 @@ exports.regionSummary = function(req, res) {
 
 // Get dashboard region analysis 
 exports.regionAnalysis = function(req, res) {
-  Survey.find({region: req.params.region}, function (err, surveys) {
+  var query = {
+    region: req.params.region,
+    loggedInRole: 'admin'
+   };
+  Survey.find(query, function (err, surveys) {
     if(err) { return handleError(res, err); }
 
     statsUtils.analysis(surveys, req.params.region, function (error, results){
@@ -96,7 +107,11 @@ exports.regionAnalysis = function(req, res) {
 //
 // Get dashboard lowerHouse 
 exports.districtSummary = function(req, res) {
-  Survey.find({district: req.params.district}, function (err, surveys) {
+  var query = {
+    district: req.params.district,
+    loggedInRole: 'admin'
+   };
+  Survey.find(query, function (err, surveys) {
     if(err) { return handleError(res, err); }
     console.log('district: ' + req.params.district);
     //console.log('surveys:');
@@ -116,7 +131,11 @@ exports.districtSummary = function(req, res) {
 
 // Get dashboard district analysis 
 exports.districtAnalysis = function(req, res) {
-  Survey.find({district: req.params.district}, function (err, surveys) {
+  var query = {
+    district: req.params.district,
+    loggedInRole: 'admin'
+   };
+  Survey.find(query, function (err, surveys) {
     if(err) { return handleError(res, err); }
 
     statsUtils.analysis(surveys, req.params.district, function (error, results){
