@@ -9,6 +9,7 @@ var SurveySchema = new Schema({
   district:          {type:String, required:true},
   organizerPerson:   {type:String, required:true},
   dataEntryPerson:   {type:String, required:true},
+  loggedInRole:      {type:String, required:true},
   neighbourhoodTeam: String,
   loggedDate:        {type: Date, default: Date.now},
   activity:          [activity]

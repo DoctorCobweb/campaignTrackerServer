@@ -21,7 +21,7 @@ exports.index = function(req, res) {
 //
 // Get dashboard statewide summary 
 exports.statewideSummary = function(req, res) {
-  Survey.find(function (err, surveys) {
+  Survey.find({loggedInRole: 'admin'}, function (err, surveys) {
     if(err) { return handleError(res, err); }
 
     statsUtils.summary(surveys, 'Statewide', function (error, results){
@@ -33,7 +33,7 @@ exports.statewideSummary = function(req, res) {
 
 // Get dashboard statewide analysis 
 exports.statewideAnalysis = function(req, res) {
-  Survey.find(function (err, surveys) {
+  Survey.find({loggedInRole: 'admin'}, function (err, surveys) {
     if(err) { return handleError(res, err); }
 
     statsUtils.analysis(surveys, 'Statewide', function (error, results){

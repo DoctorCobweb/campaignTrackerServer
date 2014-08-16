@@ -25,11 +25,11 @@ exports.analysis = function (surveys, sentContext, cb) {
     ];
 
 
-  data.total =                  makeTotalSurveysData();
-  data.activityTotals =         makeIndividualActivityTotals();
-  data.activityTimelineTotals = makeIndividualActivityTimelineTotals();
-  data.activityConversions =    makeActivityConversions();
-  data.activityTotalVolWorkHrs =    makeActivityTotalVolWorkHrs();
+  data.total =                   makeTotalSurveysData();
+  data.activityTotals =          makeIndividualActivityTotals();
+  data.activityTimelineTotals =  makeIndividualActivityTimelineTotals();
+  data.activityConversions =     makeActivityConversions();
+  data.activityTotalVolWorkHrs = makeActivityTotalVolWorkHrs();
 
   //send data off
   cb(null, data);
@@ -295,8 +295,8 @@ exports.analysis = function (surveys, sentContext, cb) {
       stats.push(reduced);
     });
 
-    console.log('stats');
-    console.dir(stats);
+    //console.log('stats');
+    //console.dir(stats);
 
     //now transform these stats to percentages
     var percentageStats = _.map(stats, function (actStats) {
@@ -310,14 +310,11 @@ exports.analysis = function (surveys, sentContext, cb) {
       //return pStatContainer;
       return pStat;
     });     
-    console.log('percentageStats');
-    console.log(percentageStats);
-
+    //console.log('percentageStats');
+    //console.log(percentageStats);
 
     return percentageStats;
   }
-
-
 
 
   function makeActivityTotalVolWorkHrs() {
@@ -335,14 +332,14 @@ exports.analysis = function (surveys, sentContext, cb) {
     grouped = _.groupBy(surveys, function (survey) {
       return survey.activity[0].activityType;
     });
-    console.dir('grouped');
-    console.dir(grouped);
+    //console.dir('grouped');
+    //console.dir(grouped);
 
 
     //find which of the relevant activities we actually have in grouped collection
     presentRelevantActivities = _.intersection(_.keys(grouped), relevantActivities);
-    console.log('presentRelevantActivities');
-    console.log(presentRelevantActivities);
+    //console.log('presentRelevantActivities');
+    //console.log(presentRelevantActivities);
 
     var stats = [];
     _.forEach(presentRelevantActivities, function (activityName) {
@@ -358,23 +355,16 @@ exports.analysis = function (surveys, sentContext, cb) {
       stats.push(reduced);
     });
 
-    console.log('stats');
-    console.dir(stats);
+    //console.log('stats');
+    //console.dir(stats);
 
     return stats;
   }
-
-
 }; //end export.analysis
-
-
-
-
 
 exports.summary = function (surveys, sentContext, cb) {
 
   attachAllMetricsToContext();
-
 
   function attachAllMetricsToContext () {
     Metric.find({context: sentContext}, function (err, metrics) {
@@ -393,9 +383,9 @@ exports.summary = function (surveys, sentContext, cb) {
         //console.log('context:');
         //console.log(context);
   
-  
+	//******* IMPORTANT *********
         //HACK: if there are metrics already associated with the context, do not add
-        //production version will have a ui for adding/removing metrics for a context
+        //production version should have a ui for adding/removing metrics for a context
         if (_.size(context.metrics)) {
           context.save(function (err){
             if (err) return handleError(err);
@@ -420,7 +410,7 @@ exports.summary = function (surveys, sentContext, cb) {
   
   
   function startTheStatJourney () {
-    console.log('startTheStatJourney');
+    console.log('startTheStatJourney: sentContext');
     console.log(sentContext);
     
     Context 
