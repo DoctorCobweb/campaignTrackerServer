@@ -26,11 +26,11 @@ var all = {
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'campaign-tracker-secret'
+    session: 'yadda30-sdf#sdyyuwqqwRaQofs219.avvv'
   },
 
   // List of user roles
-  userRoles: ['guest', 'user', 'admin'],
+  userRoles: ['guest', 'dataEntry', 'admin'],
 
   // MongoDB connection options
   mongo: {

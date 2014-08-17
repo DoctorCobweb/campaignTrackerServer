@@ -15,7 +15,6 @@ exports.index = function(req, res) {
     });
 };
 
-
 //
 // STATEWIDE ROUTES
 //
@@ -57,9 +56,6 @@ exports.statewideTracking = function(req, res) {
     });
   });
 };
-
-
-
 
 //
 // UPPER HOUSE ROUTES
@@ -128,7 +124,6 @@ exports.districtSummary = function(req, res) {
   });
 };
 
-
 // Get dashboard district analysis 
 exports.districtAnalysis = function(req, res) {
   var query = {
@@ -144,10 +139,6 @@ exports.districtAnalysis = function(req, res) {
     });
   });
 };
-
-
-
-
 
 //
 // PERSON ROUTES

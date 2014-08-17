@@ -11,6 +11,7 @@ exports.tracking = function (surveys, sentContext, cb) {
 };
 
 exports.analysis = function (surveys, sentContext, cb) {
+
   var data = {},
     allActivities = [
       'Door Knocking',
@@ -24,7 +25,6 @@ exports.analysis = function (surveys, sentContext, cb) {
       'Training Session'
     ];
 
-
   data.total =                   makeTotalSurveysData();
   data.activityTotals =          makeIndividualActivityTotals();
   data.activityTimelineTotals =  makeIndividualActivityTimelineTotals();
@@ -33,7 +33,6 @@ exports.analysis = function (surveys, sentContext, cb) {
 
   //send data off
   cb(null, data);
-
 
   //helper functions
   function makeTotalSurveysData() {
@@ -115,7 +114,6 @@ exports.analysis = function (surveys, sentContext, cb) {
     return individualActivityTotals;
   }
 
-
   function makeIndividualActivityTimelineTotals() {
     var individualActivityTimelineTotals,
       dayLength = 60 * 60 * 24 * 1000, //day length in milliseconds
@@ -131,8 +129,6 @@ exports.analysis = function (surveys, sentContext, cb) {
       dummyDataPoint = {},
       paddedMapped = [];
 
-
-
     //outputs an object with activity name as keys and arrays of surveys for that 
     //activity as values
     grouped = _.groupBy(surveys, function (survey) {
@@ -140,7 +136,6 @@ exports.analysis = function (surveys, sentContext, cb) {
     });
     //console.dir('grouped');
     //console.dir(grouped);
-
 
     //calc earliest activity date
     _.forEach(grouped, function (val, key){
@@ -155,7 +150,6 @@ exports.analysis = function (surveys, sentContext, cb) {
       });      
     });
 
-
     //calc latests activity date
     _.forEach(grouped, function (val, key){
       _.forEach(val, function (act) {
@@ -168,7 +162,6 @@ exports.analysis = function (surveys, sentContext, cb) {
         }
       });      
     });
-
 
     deltaTime = latestActDate - earliestActDate;
     numberOfDays = deltaTime / dayLength;
@@ -185,7 +178,6 @@ exports.analysis = function (surveys, sentContext, cb) {
       defaultValues.push(dummyDataPoint);
     }
     //console.log(defaultValues);
-
 
     //want to find the earliest date activity and last date activity
     //then generate a collection with every date from earliest to last. default to have
@@ -212,7 +204,6 @@ exports.analysis = function (surveys, sentContext, cb) {
     //console.dir('allMapped');
     //console.dir(allMapped);
 
-
     //munge data into format expected by rickshaw 
     //[
     //  {name:'Door Knocking', data: [{}, {}, {}] },
@@ -235,13 +226,9 @@ exports.analysis = function (surveys, sentContext, cb) {
     //console.dir('paddedMapped');
     //console.dir(paddedMapped);
     
-
-
     //return newFormat;
     return paddedMapped;
   }
-
-
 
   function makeActivityConversions() {
     var individualActivityTotals,
@@ -274,7 +261,6 @@ exports.analysis = function (surveys, sentContext, cb) {
     var presentRelevantActivities = _.intersection(_.keys(grouped), relevantActivities);
     //console.log('presentRelevantActivities');
     //console.log(presentRelevantActivities);
-
 
     var stats = [];
     _.forEach(presentRelevantActivities, function (activityName) {
@@ -316,7 +302,6 @@ exports.analysis = function (surveys, sentContext, cb) {
     return percentageStats;
   }
 
-
   function makeActivityTotalVolWorkHrs() {
     console.log('MAKING ACTIVITY TOTAL VOL WORK HRS');
     var grouped,
@@ -334,7 +319,6 @@ exports.analysis = function (surveys, sentContext, cb) {
     });
     //console.dir('grouped');
     //console.dir(grouped);
-
 
     //find which of the relevant activities we actually have in grouped collection
     presentRelevantActivities = _.intersection(_.keys(grouped), relevantActivities);
@@ -402,12 +386,9 @@ exports.summary = function (surveys, sentContext, cb) {
             startTheStatJourney();
           });
         }
-  
       });
     });
   }
-  
-  
   
   function startTheStatJourney () {
     console.log('startTheStatJourney: sentContext');
@@ -429,10 +410,7 @@ exports.summary = function (surveys, sentContext, cb) {
         cb(null, summaryStats);
       });
   }
-
 }; //end exports.summary 
-
-
 
 var handleError = function (err) {
   console.dir(err);

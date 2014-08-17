@@ -3,4 +3,8 @@ public
 .tmp
 .sass-cache
 /config/local.env.js
-*.swp
+*.sw?
+.DS_Store
+*.key
+*.pem
+*.crt

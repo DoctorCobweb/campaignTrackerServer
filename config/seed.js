@@ -10,23 +10,23 @@ var User = require('../api/user/user.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
-    name : 'Development Tools',
-    info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Sass, CoffeeScript, and Less.'
+    name : 'Customized Forms',
+    info : 'Choose what you want to measure for any activity your campaign uses.'
   }, {
-    name : 'Server and Client integration',
-    info : 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.'
+    name : 'Mobile Friendly',
+    info : 'Data entry out in the field is just as easy as sitting in front of a laptop.'
   }, {
-    name : 'Smart Build System',
-    info : 'Build system ignores `spec` files, allowing you to keep tests alongside code. Automatic injection of scripts and styles into your index.html'
+    name : 'Campaign Progress',
+    info : 'Track performance for each activity and how far off you are from achieving your goals.'
   },  {
-    name : 'Modular Structure',
-    info : 'Best practice client and server structures allow for more code reusability and maximum scalability'
+    name : 'Activity Analysis',
+    info : 'Compare and analyse which activities are the most efficient, labour intensive, most popular etc. for generating meaningful interactions with electors and volunteers. '
   },  {
-    name : 'Optimized Build',
-    info : 'Build process packs up your templates as a single JavaScript payload, minifies your scripts/css/images, and rewrites asset names for caching.'
+    name : 'Performance Granularity',
+    info : 'Track the performance of the campaign from Statewide to Region to District to all the way down to individual people.'
   },{
-    name : 'Deployment Ready',
-    info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
+    name : 'Reports',
+    info : 'Easily generate a report for your campaign at any granularity.'
   });
 });
 
@@ -35,13 +35,13 @@ User.find({}).remove(function() {
   User.create({
     provider: 'local',
     name: 'Data Entry',
-    email: 'data@westernvictoria.com',
+    email: 'data@wv.com',
     password: 'teamlloyd2014'
   }, {
     provider: 'local',
     role: 'admin',
     name: 'Admin',
-    email: 'admin@westernvictoria.com',
+    email: 'admin@wv.com',
     password: 'teamlloyd2014admin1'
   }, function() {
       console.log('finished populating users');

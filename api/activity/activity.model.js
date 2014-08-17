@@ -21,13 +21,13 @@ var ActivitySchema = new Schema({
   activityType:           String,
   activityDate:           Date,
   activityStartTime:      Date,
-  attendance:             Number,
+  attendance:             {type: Number, default: null},
   attempts:               Number,
   answered:               Number,
   meaningfulInteractions: Number,
-  volTotalWorkHrs:        Number,
-  volTotalTrainingHrs:    Number,
-  volTotalHrsCommitted:   Number,
+  volTotalWorkHrs:        {type: Number, default: null},
+  volTotalTrainingHrs:    {type: Number, default: null},
+  volTotalHrsCommitted:   {type: Number, default: null},
   comment:                String
 
 });
