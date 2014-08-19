@@ -22,7 +22,7 @@ var all = {
   port: process.env.PORT || 9000,
 
   // Should we populate the DB with sample data?
-  seedDB: false,
+  seedDB: true,
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
@@ -30,7 +30,7 @@ var all = {
   },
 
   // List of user roles
-  userRoles: ['guest', 'dataEntry', 'admin'],
+  userRoles: ['individual', 'teamleader', 'admin'],
 
   // MongoDB connection options
   mongo: {

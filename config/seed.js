@@ -34,15 +34,21 @@ User.find({}).remove(function() {
   //not providing role is ok because mongoose has a default set to 'dataEntry'
   User.create({
     provider: 'local',
-    name: 'Data Entry',
-    email: 'data@wv.com',
-    password: 'teamlloyd2014'
+    name: 'Individual',
+    email: 'individual@wv.com',
+    password: 'teamlloyd2014i'
+  }, {
+    provider: 'local',
+    role: 'teamLeader',
+    name: 'Team Leader',
+    email: 'teamLeader@wv.com',
+    password: 'teamlloyd2014tl'
   }, {
     provider: 'local',
     role: 'admin',
     name: 'Admin',
     email: 'admin@wv.com',
-    password: 'teamlloyd2014admin1'
+    password: 'teamlloyd2014a'
   }, function() {
       console.log('finished populating users');
     }

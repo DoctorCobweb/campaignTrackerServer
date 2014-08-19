@@ -40,8 +40,8 @@ if (app.get('env') === 'production') {
   //SSL CERTIFICATE and PRIVATE KEY
   //Private key and cert needed for making a https server
   var options = {
-    key:  fs.readFileSync('server.key'),
-    cert: fs.readFileSync('server.crt')
+    key:  fs.readFileSync('server/server.key'),
+    cert: fs.readFileSync('server/server.crt')
   };
 
   https.createServer(options, app).listen(config.port, function () {

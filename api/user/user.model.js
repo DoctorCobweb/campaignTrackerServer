@@ -11,7 +11,7 @@ var UserSchema = new Schema({
   email: { type: String, lowercase: true },
   role: {
     type: String,
-    default: 'dataEntry'
+    default: 'individual'
   },
   hashedPassword: String,
   provider: String,
