@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
     activity = require('../activity/activity.model').ActivitySchema;
 
 var SurveySchema = new Schema({
+  type:              {type:String, required:true},
   region:            {type:String, required:true}, 
   district:          {type:String, required:true},
   organizerPerson:   {type:String, required:true},

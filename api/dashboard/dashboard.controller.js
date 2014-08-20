@@ -20,10 +20,8 @@ exports.index = function(req, res) {
 //
 // Get dashboard statewide summary 
 exports.statewideSummary = function(req, res) {
-  //we are only interested in surveys submitted by admins which are the leaders
-  //therefore query for loggedInRole === 'admin'
-  //this holds for other exports.xxxxx functions in this file
-  Survey.find({loggedInRole: 'admin'}, function (err, surveys) {
+  //we are only interested in summary type surveys 
+  Survey.find({type: 'summary'}, function (err, surveys) {
     if(err) { return handleError(res, err); }
 
     statsUtils.summary(surveys, 'Statewide', function (error, results){
@@ -35,7 +33,7 @@ exports.statewideSummary = function(req, res) {
 
 // Get dashboard statewide analysis 
 exports.statewideAnalysis = function(req, res) {
-  Survey.find({loggedInRole: 'admin'}, function (err, surveys) {
+  Survey.find({type: 'summary'}, function (err, surveys) {
     if(err) { return handleError(res, err); }
 
     statsUtils.analysis(surveys, 'Statewide', function (error, results){
@@ -64,7 +62,7 @@ exports.statewideTracking = function(req, res) {
 exports.regionSummary = function(req, res) {
   var query = {
     region: req.params.region,
-    loggedInRole: 'admin'
+    type: 'summary'
    };
   Survey.find(query, function (err, surveys) {
     if(err) { return handleError(res, err); }
@@ -86,7 +84,7 @@ exports.regionSummary = function(req, res) {
 exports.regionAnalysis = function(req, res) {
   var query = {
     region: req.params.region,
-    loggedInRole: 'admin'
+    type: 'summary'
    };
   Survey.find(query, function (err, surveys) {
     if(err) { return handleError(res, err); }
@@ -105,7 +103,7 @@ exports.regionAnalysis = function(req, res) {
 exports.districtSummary = function(req, res) {
   var query = {
     district: req.params.district,
-    loggedInRole: 'admin'
+    type: 'summary'
    };
   Survey.find(query, function (err, surveys) {
     if(err) { return handleError(res, err); }
@@ -128,7 +126,7 @@ exports.districtSummary = function(req, res) {
 exports.districtAnalysis = function(req, res) {
   var query = {
     district: req.params.district,
-    loggedInRole: 'admin'
+    type: 'summary'
    };
   Survey.find(query, function (err, surveys) {
     if(err) { return handleError(res, err); }

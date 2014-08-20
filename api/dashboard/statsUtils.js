@@ -223,8 +223,8 @@ exports.analysis = function (surveys, sentContext, cb) {
       mObj.data = _.sortBy(tempDefaults, function (item) {return item.x;});
       paddedMapped.push(mObj);
     });
-    //console.dir('paddedMapped');
-    //console.dir(paddedMapped);
+    console.dir('paddedMapped');
+    console.dir(paddedMapped);
     
     //return newFormat;
     return paddedMapped;
