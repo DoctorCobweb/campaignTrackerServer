@@ -25,11 +25,12 @@ exports.analysis = function (surveys, sentContext, cb) {
       'Training Session'
     ];
 
-  data.total =                   makeTotalSurveysData();
-  data.activityTotals =          makeIndividualActivityTotals();
-  data.activityTimelineTotals =  makeIndividualActivityTimelineTotals();
-  data.activityConversions =     makeActivityConversions();
-  data.activityTotalVolWorkHrs = makeActivityTotalVolWorkHrs();
+  data.total =                     makeTotalSurveysData();
+  data.activityTotals =            makeIndividualActivityTotals();
+  data.activityTimelineTotals =    makeIndividualActivityTimelineTotals();
+  data.activityConversions =       makeActivityConversions();
+  data.activityTotalVolWorkHrs =   makeActivityTotalVolWorkHrs();
+  data.activityTimelineMITotals =  makeActivityTimelineMITotals();
 
   //send data off
   cb(null, data);
@@ -223,8 +224,8 @@ exports.analysis = function (surveys, sentContext, cb) {
       mObj.data = _.sortBy(tempDefaults, function (item) {return item.x;});
       paddedMapped.push(mObj);
     });
-    console.dir('paddedMapped');
-    console.dir(paddedMapped);
+    //console.dir('paddedMapped');
+    //console.dir(paddedMapped);
     
     //return newFormat;
     return paddedMapped;
@@ -344,7 +345,161 @@ exports.analysis = function (surveys, sentContext, cb) {
 
     return stats;
   }
+
+  function makeActivityTimelineMITotals() {
+    var individualActivityTimelineTotals,
+      dayLength = 60 * 60 * 24 * 1000, //day length in milliseconds
+      i,
+      earliestActDate,
+      latestActDate,
+      grouped,
+      allMapped = {},
+      deltaTime,
+      numberOfDays,
+      defaultValues = [],
+      dummyDataPoint = {},
+      paddedMapped = [];
+
+    var relevantActivities = [
+      'Door Knocking',
+      'Phone Banking',
+      'Volunteer Recruitment Phone Calling',
+      'One On One',
+      'Stall'
+    ];
+
+    //outputs an object with activity name as keys and arrays of surveys for that 
+    //activity as values
+    grouped = _.groupBy(surveys, function (survey) {
+      return survey.activity[0].activityType;
+    });
+    //console.dir('grouped');
+    //console.dir(grouped);
+
+    //calc earliest activity date
+    _.forEach(grouped, function (val, key){
+      _.forEach(val, function (act) {
+        if (!earliestActDate) {
+          earliestActDate = act.activity[0].activityDate.getTime();
+          return;
+        };
+        if (act.activity[0].activityDate.getTime() <= earliestActDate) {
+          earliestActDate = act.activity[0].activityDate.getTime();
+        }
+      });      
+    });
+
+    //calc latests activity date
+    _.forEach(grouped, function (val, key){
+      _.forEach(val, function (act) {
+        if (!latestActDate) {
+          latestActDate = act.activity[0].activityDate.getTime();
+          return;
+        };
+        if (act.activity[0].activityDate.getTime() >= latestActDate) {
+          latestActDate = act.activity[0].activityDate.getTime();
+        }
+      });      
+    });
+
+    deltaTime = latestActDate - earliestActDate;
+    numberOfDays = deltaTime / dayLength;
+
+    //console.log('latestActDate: ' + latestActDate);
+    //console.log('earliestActDate: ' + earliestActDate);
+    //console.log('deltaTime: ' + deltaTime);
+    //console.log('numberOfDays: ' + numberOfDays);
+    
+    for (i = 0; i <= numberOfDays; i++) {
+      dummyDataPoint = {},
+      dummyDataPoint.x = (earliestActDate + (i * dayLength)) /1000; //back to seconds
+      dummyDataPoint.y = 0;
+      defaultValues.push(dummyDataPoint);
+    }
+    //console.log(defaultValues);
+
+    //want to find the earliest date activity and last date activity
+    //then generate a collection with every date from earliest to last. default to have
+    //null val for each date
+    //then for each activity we add count for the day to this collection
+    //=> ensures each activiy collection has the same length as required by rickshaw
+
+    _.forEach(grouped, function (value, key) {
+      var mappedAct = _.reduce(value, function (result, survey, k) {
+	var dateKey = survey.activity[0].activityDate.toString();
+	var mi = survey.activity[0].meaningfulInteractions;
+
+	//if the particular activity does not have a meaningfulInteractions attr then
+	//skip it!
+	//dropping these activities here has a side effect: we've already calculated
+	//the spread in time for ALL activities which makes defaultValues array stretch
+	//over complete period even if there we no activities with mi att
+	//=> may get whitespace on either ends of timeline
+	if (mi === undefined) return;
+
+	if (result[dateKey] === undefined) {
+	  result[dateKey] = mi;
+	} else {
+	  result[dateKey] = result[dateKey] + mi;
+	}
+
+	return result;
+      }, {});
+      //console.log('mappedAct');
+      //console.log(mappedAct);
+
+      //only keep activities with mi attr
+      if (!_.contains(relevantActivities, key)) return;
+
+      allMapped[key] = mappedAct;
+    });
+    //console.dir('allMapped');
+    //console.dir(allMapped);
+
+    //munge data into format expected by rickshaw 
+    //[
+    //  {name:'Door Knocking', data: [{}, {}, {}] },
+    //  {name:'Phone Banking', data: [{}, {}, {}]},
+    //  {name:'Stall', data: [{}, {}, {}]}
+    //]
+    //and change all non zero data points in defaultValues corresponding to an activity
+    _.forEach(allMapped, function (val, key) {
+      var tempDefaults = _.cloneDeep(defaultValues);
+      var mObj = {};
+
+      _.forEach(val, function (v, k) {
+	var cObj = {},
+	  foundIndex,
+	  tempDate;
+
+	tempDate = (new Date(k).getTime())/1000;
+	foundIndex = _.findIndex(tempDefaults, {x: tempDate});
+
+	cObj.x = tempDate;
+	cObj.y = v;
+
+	if (foundIndex !== -1) {
+          //must replace in tempDefaults an actual non-zero survey
+	  tempDefaults[foundIndex] = cObj;
+	}
+
+      });
+
+      mObj.name = key;      
+      mObj.data = _.sortBy(tempDefaults, function (item) {return item.x;});
+      paddedMapped.push(mObj);
+      //console.log('mObj');
+      //console.log(mObj);
+    });
+    //console.dir('paddedMapped');
+    //console.dir(paddedMapped);
+    
+    return paddedMapped;
+  }
+
 }; //end export.analysis
+
+
 
 exports.summary = function (surveys, sentContext, cb) {
 
