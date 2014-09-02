@@ -25,9 +25,9 @@ var ActivitySchema = new Schema({
   attempts:               Number,
   answered:               Number,
   meaningfulInteractions: Number,
-  volTotalWorkHrs:        {type: Number, default: null},
-  volTotalTrainingHrs:    {type: Number, default: null},
-  volTotalHrsCommitted:   {type: Number, default: null},
+  volTotalWorkHrs:        {type: Number, default: null}, //3.50 => 3hrs 30mins
+  volTotalTrainingHrs:    {type: Number, default: null}, //3.50 => 3hrs 30mins
+  volTotalHrsCommitted:   {type: Number, default: null}, //3.50 => 3hrs 30mins
   comment:                String
 
 });

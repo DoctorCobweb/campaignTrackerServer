@@ -523,7 +523,8 @@ exports.summary = function (surveys, sentContext, cb) {
         //console.log(context);
   
 	//******* IMPORTANT *********
-        //HACK: if there are metrics already associated with the context, do not add
+        //HACK: if there are metrics already associated with the context, do not add.
+	//
         //production version should have a ui for adding/removing metrics for a context
         if (_.size(context.metrics)) {
           context.save(function (err){
