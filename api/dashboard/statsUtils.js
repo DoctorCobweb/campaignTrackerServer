@@ -25,31 +25,17 @@ exports.analysis = function (surveys, sentContext, cb) {
       'Training Session'
     ];
 
-  data.total =                     makeTotalSurveysData();
-  data.activityTotals =            makeIndividualActivityTotals();
-  data.activityTimelineTotals =    makeIndividualActivityTimelineTotals();
-  data.activityConversions =       makeActivityConversions();
-  data.activityTotalVolWorkHrs =   makeActivityTotalVolWorkHrs();
-  data.activityTimelineMITotals =  makeActivityTimelineMITotals();
+  data.activityTotals             = makeIndividualActivityTotals();
+  data.activityTimelineTotals     = makeIndividualActivityTimelineTotals();
+  data.activityConversions        = makeActivityConversions();
+  data.activityTotalVolWorkHrs    = makeActivityTotalVolWorkHrs();
+  data.activityTimelineMITotals   = makeActivityTimelineMITotals();
 
   //send data off
   cb(null, data);
 
-  //helper functions
-  function makeTotalSurveysData() {
-    return _.chain(surveys)
-      .countBy(function(survey){return survey.activity[0].activityDate})
-      .pairs()
-      .map(function(pair){
-        return {
-          x: (new Date(pair[0]).getTime())/1000,
-          y: pair[1]
-        };
-      })
-      .sortBy(function(dateCount){return dateCount.x;})
-      .value();
-  }
 
+  //individual functions
   function makeIndividualActivityTotals() {
     var individualActivityTotals,
       splitActivities,
@@ -58,7 +44,6 @@ exports.analysis = function (surveys, sentContext, cb) {
       combined,
       ordered;
     
-
     splitActivities = _.chain(surveys)
       .countBy(function(survey){return survey.activity[0].activityType})
       .pairs()
@@ -165,12 +150,15 @@ exports.analysis = function (surveys, sentContext, cb) {
     });
 
     deltaTime = latestActDate - earliestActDate;
-    numberOfDays = deltaTime / dayLength;
+    numberOfDays = (deltaTime / dayLength) + 1;
 
-    //console.log('latestActDate: ' + latestActDate);
-    //console.log('earliestActDate: ' + earliestActDate);
-    //console.log('deltaTime: ' + deltaTime);
-    //console.log('numberOfDays: ' + numberOfDays);
+    /*
+    console.log('*** activityTimeTotals ***');
+    console.log('latestActDate: ' + latestActDate);
+    console.log('earliestActDate: ' + earliestActDate);
+    console.log('deltaTime: ' + deltaTime);
+    console.log('numberOfDays: ' + numberOfDays);
+    */
     
     for (i = 0; i <= numberOfDays; i++) {
       dummyDataPoint = {},
@@ -339,10 +327,8 @@ exports.analysis = function (surveys, sentContext, cb) {
       reduced.activity = activityName;
       stats.push(reduced);
     });
-
     //console.log('stats');
     //console.dir(stats);
-
     return stats;
   }
 
@@ -358,8 +344,11 @@ exports.analysis = function (surveys, sentContext, cb) {
       numberOfDays,
       defaultValues = [],
       dummyDataPoint = {},
-      paddedMapped = [];
+      paddedMapped = [
+        {'name': 'Door Knocking', 'data': []}
+      ];
 
+    /*
     var relevantActivities = [
       'Door Knocking',
       'Phone Banking',
@@ -367,57 +356,76 @@ exports.analysis = function (surveys, sentContext, cb) {
       'One On One',
       'Stall'
     ];
+    */
+    
+    //only do this for dking for now
+    var relevantActivities = [
+      'Door Knocking'
+    ];
+
+    //get rid of activities that don't have meaningful interactions field
+    var relevantSurveys = _.filter(surveys, function (val, index) {
+      return _.contains(relevantActivities, val.activity[0].activityType);
+    });
+    //console.log('relevantSurveys');
+    //console.log(relevantSurveys);
 
     //outputs an object with activity name as keys and arrays of surveys for that 
     //activity as values
-    grouped = _.groupBy(surveys, function (survey) {
+    grouped = _.groupBy(relevantSurveys, function (survey) {
       return survey.activity[0].activityType;
     });
     //console.dir('grouped');
     //console.dir(grouped);
 
-    //calc earliest activity date
+    //calc earliest & latests activity date
     _.forEach(grouped, function (val, key){
       _.forEach(val, function (act) {
-        if (!earliestActDate) {
-          earliestActDate = act.activity[0].activityDate.getTime();
-          return;
-        };
-        if (act.activity[0].activityDate.getTime() <= earliestActDate) {
-          earliestActDate = act.activity[0].activityDate.getTime();
-        }
-      });      
-    });
 
-    //calc latests activity date
-    _.forEach(grouped, function (val, key){
-      _.forEach(val, function (act) {
-        if (!latestActDate) {
-          latestActDate = act.activity[0].activityDate.getTime();
-          return;
+	//***IMPORTANT***
+	//for the activityDate sometimes the time component of the date is different.
+	//=> affects how we translate to timestamp values which is needed when using 
+	//rickshaw. therefore, we MUST rid the activityDate of all time-like details
+	//before proceeding. 
+	//this is also done later on in this function
+	//get rid of the hours,mins,seconds,millisecs
+	var dateWithNoTime = act.activity[0].activityDate.setHours(0,0,0,0);
+
+        if (!earliestActDate) {
+          earliestActDate = dateWithNoTime;
         };
-        if (act.activity[0].activityDate.getTime() >= latestActDate) {
-          latestActDate = act.activity[0].activityDate.getTime();
+	if (!latestActDate) {
+          latestActDate = dateWithNoTime;
+	}
+        if (dateWithNoTime <= earliestActDate) {
+          earliestActDate = dateWithNoTime;
+        }
+        if (dateWithNoTime >= latestActDate) {
+          latestActDate = dateWithNoTime;
         }
       });      
     });
 
     deltaTime = latestActDate - earliestActDate;
-    numberOfDays = deltaTime / dayLength;
+    numberOfDays = (deltaTime / dayLength) + 1;
 
-    //console.log('latestActDate: ' + latestActDate);
-    //console.log('earliestActDate: ' + earliestActDate);
-    //console.log('deltaTime: ' + deltaTime);
-    //console.log('numberOfDays: ' + numberOfDays);
+    console.log('***activityTimelineMITotals***');
+    console.log('typeof(latestActDate): ' + typeof(latestActDate)); //number
+    console.log('latestActDate: ' + latestActDate);
+    console.log('earliestActDate: ' + earliestActDate);
+    console.log('deltaTime: ' + deltaTime);
+    console.log('numberOfDays: ' + numberOfDays);
     
-    for (i = 0; i <= numberOfDays; i++) {
+    for (i = 0; i < numberOfDays; i++) {
       dummyDataPoint = {},
-      dummyDataPoint.x = (earliestActDate + (i * dayLength)) /1000; //back to seconds
+      dummyDataPoint.x = (earliestActDate + (i * dayLength)) / 1000; //back to seconds
       dummyDataPoint.y = 0;
       defaultValues.push(dummyDataPoint);
     }
-    //console.log(defaultValues);
+    console.log('defaultValues');
+    console.log(defaultValues);
 
+    
     //want to find the earliest date activity and last date activity
     //then generate a collection with every date from earliest to last. default to have
     //null val for each date
@@ -426,31 +434,30 @@ exports.analysis = function (surveys, sentContext, cb) {
 
     _.forEach(grouped, function (value, key) {
       var mappedAct = _.reduce(value, function (result, survey, k) {
-	var dateKey = survey.activity[0].activityDate.toString();
-	var mi = survey.activity[0].meaningfulInteractions;
 
-	//if the particular activity does not have a meaningfulInteractions attr then
-	//skip it!
-	//dropping these activities here has a side effect: we've already calculated
-	//the spread in time for ALL activities which makes defaultValues array stretch
-	//over complete period even if there we no activities with mi att
-	//=> may get whitespace on either ends of timeline
-	if (mi === undefined) return;
+	//get rid of the hours,mins,seconds,millisecs
+	var dateKey = survey.activity[0].activityDate.setHours(0,0,0,0) / 1000;
+	var mi = survey.activity[0].meaningfulInteractions;
 
 	if (result[dateKey] === undefined) {
 	  result[dateKey] = mi;
+          //console.log('FIRST TIME dateKey: ' + dateKey);
+          //console.log('mi: ' + mi);
+	  //console.log('result[dateKey]');
+	  //console.log(result[dateKey]);
 	} else {
 	  result[dateKey] = result[dateKey] + mi;
+          //console.log('dateKey ALREADY PRESENT: ' + dateKey);
+          //console.log('mi: ' + mi);
+	  //console.log('result[dateKey]');
+	  //console.log(result[dateKey]);
 	}
 
 	return result;
       }, {});
-      //console.log('mappedAct');
+
+      //console.log('mappedAct for ' + key);
       //console.log(mappedAct);
-
-      //only keep activities with mi attr
-      if (!_.contains(relevantActivities, key)) return;
-
       allMapped[key] = mappedAct;
     });
     //console.dir('allMapped');
@@ -472,31 +479,30 @@ exports.analysis = function (surveys, sentContext, cb) {
 	  foundIndex,
 	  tempDate;
 
-	tempDate = (new Date(k).getTime())/1000;
+	tempDate = parseInt(k, 10);
 	foundIndex = _.findIndex(tempDefaults, {x: tempDate});
 
 	cObj.x = tempDate;
 	cObj.y = v;
+	//console.log('cObj:');
+	//console.log(cObj);
 
 	if (foundIndex !== -1) {
           //must replace in tempDefaults an actual non-zero survey
 	  tempDefaults[foundIndex] = cObj;
 	}
-
+	//console.log('tempDefaults');
+	//console.log(tempDefaults);
       });
 
       mObj.name = key;      
       mObj.data = _.sortBy(tempDefaults, function (item) {return item.x;});
-      paddedMapped.push(mObj);
-      //console.log('mObj');
-      //console.log(mObj);
+      paddedMapped[_.findIndex(paddedMapped, {'name': key})] = mObj;
     });
-    //console.dir('paddedMapped');
-    //console.dir(paddedMapped);
-    
+    //console.dir('paddedMapped[0].data');
+    //console.dir(paddedMapped[0].data);
     return paddedMapped;
   }
-
 }; //end export.analysis
 
 

@@ -89,6 +89,9 @@ exports.regionAnalysis = function(req, res) {
   Survey.find(query, function (err, surveys) {
     if(err) { return handleError(res, err); }
 
+    if (_.isEmpty(surveys)) {
+      return res.json(200, {});
+    }
     statsUtils.analysis(surveys, req.params.region, function (error, results){
       if(error) { return handleError(res, error); }
       return res.json(200, results);
