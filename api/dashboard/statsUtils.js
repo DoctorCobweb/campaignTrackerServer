@@ -508,9 +508,6 @@ exports.analysis = function (surveys, sentContext, cb) {
   }
 
 
-
-
-
   function makeActivityTimelineMIWeekly() {
     var individualActivityTimelineTotals,
       dayLength = 60 * 60 * 24 * 1000,      //day length in milliseconds
@@ -581,6 +578,7 @@ exports.analysis = function (surveys, sentContext, cb) {
     deltaTime = latestActDate - earliestActDate;
     numberOfDays = (deltaTime / dayLength) + 1;
 
+    /*
     console.log('***activityTimelineMIWeekly***');
     console.log('typeof(latestActDate): ' + typeof(latestActDate)); //number
     console.log('latestActDate: ' + latestActDate);
@@ -591,25 +589,23 @@ exports.analysis = function (surveys, sentContext, cb) {
     console.log(electionDate);
     console.log('weekLength');
     console.log(weekLength);
+    */
 
     var weekStart = electionDate;
     var weekStartArray = [];
 
     while (weekStart >= (earliestActDate - weekLength)) {
+      //console.log(new Date(weekStart))
       weekStartArray.push(weekStart);
-      console.log(new Date(weekStart))
       weekStart -= weekLength; 
     }
-    console.log('weekStartArray, has timestamps of weeks starting:');
-    console.log(weekStartArray);
+    //console.log('weekStartArray, has timestamps of weeks starting:');
+    //console.log(weekStartArray);
 
     var weekNumbers = [];
-    for(j = 0 ; j < weekStartArray.length; j++) {
+    for (j = 0 ; j < weekStartArray.length; j++) {
       weekNumbers.push(j);
     }
-
-    console.log('weekNumbers');
-    console.log(weekNumbers);
 
     var allTestles = {};
     _.forEach(grouped, function (value, key) {
@@ -635,11 +631,27 @@ exports.analysis = function (surveys, sentContext, cb) {
           allTestles[week] +=survey.activity[0].meaningfulInteractions;
 	}
       });
-      
+      console.log('allTestles:');
       console.log(allTestles);
     });
 
+    var testleKeys = _.keys(allTestles);
+    var maxTestle = parseInt(_.max(testleKeys), 10);
+    var minTestle = parseInt(_.min(testleKeys), 10);
 
+    for (var g = minTestle; g < maxTestle; g++) {
+      if (_.contains(testleKeys, g.toString())) {
+        continue; 
+      } else {
+        allTestles[g] = 0;
+      }
+    }
+    //console.log('testleKeys');
+    //console.log(testleKeys);
+    //console.log('allTestles:');
+    //console.log(allTestles);
+
+    return allTestles;
   }
 }; //end export.analysis
 
